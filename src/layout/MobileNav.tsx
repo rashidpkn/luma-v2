@@ -32,10 +32,10 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             <a href="/" onClick={onClose} className="inline-block -ml-2">
               <img
                 alt="Luma Pay Logo"
-                width="150"
-                height="50"
-                className="h-8 w-auto"
-                src="/images/luma-logo-white.png"
+                width="136"
+                height="32"
+                className="h-8 w-auto object-contain"
+                src="/images/luma-pay-wordmark.png"
               />
             </a>
             <button
