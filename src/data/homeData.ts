@@ -47,7 +47,7 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 1,
     title: "Multi-Currency Accounts",
     description: "Luma Pay brings global finance into one platform. We provide comprehensive multi-currency accounts that let you hold and manage funds across borders seamlessly in a single easy-to-use dashboard.",
-    image: "/images/homev3/why-choose/1.png",
+    image: "/images/homev3/why-choose/accounts-phone.png",
     imageRight: true,
   },
   {
