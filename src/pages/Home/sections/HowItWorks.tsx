@@ -11,7 +11,7 @@ export const HowItWorks: React.FC = () => {
       {/* 1. How It Works Banner (Rocket Background) */}
       <div
         className="flex flex-col lg:flex-row justify-center items-center my-8 rounded-2xl bg-black md:bg-transparent bg-cover bg-center md:gap-10 py-10 xl:py-20 px-4 md:px-10"
-        style={{ backgroundImage: "url('/images/homev3/poweryYour/rocketnew.webp')" }}
+        style={{ backgroundImage: "url('/home images/How it works.png')" }}
       >
         <div className="xl:w-3/5 text-center lg:text-left">
           <h2 className="text-3xl leading-[30px] md:text-[40px] md:leading-[46px] text-[#F2F2F2] font-bold tracking-tighter pt-4">
@@ -45,7 +45,7 @@ export const HowItWorks: React.FC = () => {
         <div className="w-full relative bg-transparent flex xl:block flex-col xl:flex-row justify-center items-center xl:pt-0">
           <img
             alt="fiat"
-            src="/images/homev3/poweryYour/wallet.png"
+            src="/home images/Physical & Virtual Debit Cards.png"
             width={300}
             height={200}
             className="select-none mx-auto max-h-[350px] object-contain"
@@ -65,7 +65,7 @@ export const HowItWorks: React.FC = () => {
       {/* 3. Join the Luma Pay Rewards Program (Arrow Background) */}
       <div
         className="flex flex-col lg:flex-row justify-center items-center mb-8 rounded-2xl bg-black md:bg-transparent bg-cover bg-center md:gap-10 mt-10 py-9 xl:py-32 px-4 md:px-10"
-        style={{ backgroundImage: "url('/images/homev3/poweryYour/arrowUpdated.webp')" }}
+        style={{ backgroundImage: "url('/home images/Crypto Presale.png')" }}
       >
         <div className="xl:w-3/5 text-center lg:text-left">
           <h2 className="text-3xl leading-[30px] md:text-[40px] md:leading-[46px] text-[#F2F2F2] font-bold tracking-tighter md:pt-4">

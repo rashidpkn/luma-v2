@@ -9,7 +9,7 @@ export const WhatIsDigiTap: React.FC = () => {
           What is Luma Pay
         </h2>
         <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-5">
-          Luma Pay is a comprehensive financial platform that offers multi-currency accounts, foreign exchange, and cross-border payment services. As a registered Money Services Business, it enables users to seamlessly hold and manage over 30 traditional currencies while also offering virtual currency capabilities. 
+          Luma Pay is a comprehensive financial platform that offers multi-currency accounts, foreign exchange, and cross-border payment services. As a registered Money Services Business, it enables users to seamlessly hold and manage over 30 traditional currencies while also offering virtual currency capabilities.
           <br />
           <br />
           Backed by global banking partners, Luma Pay provides instant currency conversions, domestic and international remittances, and flexible payment cards. We serve both individual users and global businesses, providing a unified hub to securely manage and transfer funds without boundaries.
@@ -46,7 +46,7 @@ export const WhatIsDigiTap: React.FC = () => {
         <div className="w-full flex justify-center items-center">
           <img
             alt="Key Capabilities"
-            src="/images/homev3/poweryYour/card.png"
+            src="/home images/Key Capabilities.png"
             width={590}
             height={400}
             className="w-full max-w-[550px] object-contain drop-shadow-2xl select-none"

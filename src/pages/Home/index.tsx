@@ -5,6 +5,7 @@ import AsSeenIn from "./sections/AsSeenIn";
 import HowItWorks from "./sections/HowItWorks";
 import WhatIsDigiTap from "./sections/WhatIsDigiTap";
 import ComparisonSection from "./sections/ComparisonSection";
+import SupportedCorridors from "./sections/SupportedCorridors";
 import WhyChooseUs from "./sections/WhyChooseUs";
 import InterfaceShowcase from "./sections/InterfaceShowcase";
 import FeaturesGrid from "./sections/FeaturesGrid";
@@ -32,19 +33,22 @@ export const HomePage: React.FC = () => {
       {/* 6. Comparison: Traditional Bank vs Crypto Exchange vs Luma Pay */}
       <ComparisonSection />
 
-      {/* 7. Why Choose Luma Pay 10 Features */}
+      {/* 7. Supported Corridors */}
+      <SupportedCorridors />
+
+      {/* 8. Why Choose Luma Pay 10 Features */}
       <WhyChooseUs />
 
-      {/* 8. Luma Pay App Interface Showcase */}
+      {/* 9. Luma Pay App Interface Showcase */}
       <InterfaceShowcase />
 
-      {/* 9. Complete Crypto Fiat Bank Features 6-Card Grid */}
+      {/* 10. Complete Crypto Fiat Bank Features 6-Card Grid */}
       <FeaturesGrid />
 
-      {/* 10. Presale Limited Time Opportunity */}
+      {/* 11. Presale Limited Time Opportunity */}
       <PresaleBanner />
 
-      {/* 11. Final CTA Banner to Download App */}
+      {/* 12. Final CTA Banner to Download App */}
       <AppCtaBanner />
     </div>
   );

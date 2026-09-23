@@ -51,7 +51,7 @@ export const ComparisonSection: React.FC = () => {
             <div className="w-44 h-44 md:w-52 md:h-52 relative flex items-center justify-center">
               <img
                 alt="Luma Pay"
-                src="/images/homev3/traditional/DigitapPhone.png"
+                src="/home images/Digitap Crypto Fiat Bank.png"
                 className="max-h-full max-w-full object-contain drop-shadow-2xl"
               />
             </div>
