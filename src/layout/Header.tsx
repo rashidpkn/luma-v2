@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                   loading="eager"
                   width={3313}
                   height={780}
-                  className="relative z-20 h-8 md:h-10 w-auto object-contain"
+                  className="relative z-20 h-8 w-auto max-w-none shrink-0 object-contain md:h-10"
                   src="/images/luma-pay-logo.png"
                 />
               </a>
