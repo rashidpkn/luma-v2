@@ -33,16 +33,18 @@ export const SupportedCorridors: React.FC = () => {
           />
         </div>
 
-        <div className="grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {corridors.map((country) => (
-            <div
-              key={country}
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#112240] px-5 py-4 text-white"
-            >
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-main-blue shadow-[0_0_8px_#00b4d8]" />
-              <span className="font-medium">{country}</span>
-            </div>
-          ))}
+        <div className="w-full min-w-0 overflow-x-auto">
+          <div className="mx-auto flex w-max flex-nowrap items-center gap-3">
+            {corridors.map((country) => (
+              <div
+                key={country}
+                className="flex shrink-0 items-center gap-3 rounded-2xl border border-white/10 bg-[#112240] px-5 py-4 text-white"
+              >
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-main-blue shadow-[0_0_8px_#00b4d8]" />
+                <span className="whitespace-nowrap font-medium">{country}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
