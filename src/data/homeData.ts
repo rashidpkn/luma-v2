@@ -61,7 +61,7 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 3,
     title: "30+ Currencies Supported",
     description: "Luma Pay supports over 30 fiat currencies and multiple digital assets. Users can hold, send, and exchange money in the form they need, anytime, anywhere, making international transactions accessible.",
-    image: "/images/homev3/why-choose/3.png",
+    image: "/images/homev3/why-choose/currencies-phone.png",
     imageRight: true,
   },
   {
