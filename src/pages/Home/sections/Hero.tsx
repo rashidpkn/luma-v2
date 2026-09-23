@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href="#get-started"
-              className="darkbtn border border-main-green bg-[#242a28] px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#242a28]/80 cursor-pointer transition-all"
+              className="darkbtn border border-main-green bg-[#112240] px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer transition-all"
             >
               Get Started
             </a>

@@ -41,11 +41,11 @@ export const FloatingStickyBar: React.FC = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full pointer-events-none"
       }`}
     >
-      <div className="mx-auto max-w-5xl xl:max-w-[940px] rounded-2xl backdrop-blur-md bg-[#101d16]/95 border border-white/10 shadow-2xl gap-3 text-white py-2.5 px-3 md:px-4 flex items-center flex-wrap xl:flex-nowrap flex-col xl:flex-row">
+      <div className="mx-auto max-w-5xl xl:max-w-[940px] rounded-2xl backdrop-blur-md bg-[#0a192f]/95 border border-white/10 shadow-2xl gap-3 text-white py-2.5 px-3 md:px-4 flex items-center flex-wrap xl:flex-nowrap flex-col xl:flex-row">
         <div className="flex flex-col lg:flex-row items-center gap-x-3 gap-y-2 w-full overflow-hidden transition-all duration-500 ease-in-out">
           {/* Price pill */}
           <div
-            className={`flex justify-between xl:justify-center items-center gap-2 md:gap-3 bg-[#242a28] h-[48px] md:h-[55px] px-3 md:px-4 rounded-lg w-full xl:w-auto transition-all ${
+            className={`flex justify-between xl:justify-center items-center gap-2 md:gap-3 bg-[#112240] h-[48px] md:h-[55px] px-3 md:px-4 rounded-lg w-full xl:w-auto transition-all ${
               isCollapsed ? "hidden lg:flex" : "flex"
             }`}
           >
@@ -63,7 +63,7 @@ export const FloatingStickyBar: React.FC = () => {
 
           {/* Timer & Mobile Buy */}
           <div className="flex xl:flex-col flex-row lg:w-auto w-full gap-x-1">
-            <div className="flex-1 bg-[#242a28] h-[48px] md:h-[55px] px-3 md:px-4 py-1.5 rounded-lg flex items-center justify-between xl:justify-center gap-2">
+            <div className="flex-1 bg-[#112240] h-[48px] md:h-[55px] px-3 md:px-4 py-1.5 rounded-lg flex items-center justify-between xl:justify-center gap-2">
               <div className="xl:hidden flex">
                 <a
                   target="_blank"
@@ -112,7 +112,7 @@ export const FloatingStickyBar: React.FC = () => {
             </div>
 
             {/* Mobile collapse toggle */}
-            <div className="lg:hidden flex items-center justify-center bg-[#242a28] px-2 rounded-lg text-main-green">
+            <div className="lg:hidden flex items-center justify-center bg-[#112240] px-2 rounded-lg text-main-green">
               <button
                 type="button"
                 onClick={() => setIsCollapsed(!isCollapsed)}

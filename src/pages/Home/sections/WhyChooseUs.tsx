@@ -51,7 +51,7 @@ export const WhyChooseUs: React.FC = () => {
           target="_blank"
           rel="noreferrer"
           href="#get-started"
-          className="darkbtn border border-main-green bg-[#242a28] px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold hover:bg-[#242a28]/80 rounded-full cursor-pointer transition-all"
+          className="darkbtn border border-main-green bg-[#112240] px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold hover:bg-[#112240]/80 rounded-full cursor-pointer transition-all"
         >
           Get Started
         </a>

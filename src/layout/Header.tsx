@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
   }, []);
 
   return (
-    <header className={`absolute top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${activeMega !== null ? 'bg-[#101d16]' : 'hover:bg-[#101d16]'}`}>
+    <header className={`absolute top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${activeMega !== null ? 'bg-[#0a192f]' : 'hover:bg-[#0a192f]'}`}>
       <div className="py-4 md:py-6" id="hero">
         <div className="w-full z-20">
           <div className="w-full flex items-center justify-between px-4 md:px-6 lg:px-10">
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                       target={item.external ? "_blank" : undefined}
                       rel={item.external ? "noreferrer" : undefined}
                       className={`text-white flex gap-x-1 relative py-2 z-20 rounded-[30px] px-3.5 items-center text-lg tracking-tighter transition-colors ${
-                        activeMega === index ? 'bg-[#242a28] text-main-green' : 'hover:bg-[#242a28] hover:text-main-green'
+                        activeMega === index ? 'bg-[#112240] text-main-green' : 'hover:bg-[#112240] hover:text-main-green'
                       }`}
                     >
                       {item.label}
@@ -102,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                   target="_blank"
                   rel="noreferrer"
                   href="#get-started"
-                  className="darkbtn flex items-center border border-main-green bg-[#242a28] px-6 py-3 text-base text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#242a28]/80 cursor-pointer"
+                  className="darkbtn flex items-center border border-main-green bg-[#112240] px-6 py-3 text-base text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
                 >
                   Download App
                 </a>
@@ -185,7 +185,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
             onMouseEnter={() => handleEnter(index)}
             onMouseLeave={handleLeave}
           >
-            <div className="bg-[#101d16] shadow-2xl py-12">
+            <div className="bg-[#0a192f] shadow-2xl py-12">
               <div className="max-w-[1400px] mx-auto px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 divide-x divide-main-green">
                   <div className="flex flex-col justify-start space-y-4 pr-8">
@@ -206,7 +206,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                             href={link.href}
                             target={link.external ? "_blank" : undefined}
                             rel={link.external ? "noreferrer" : undefined}
-                            className="text-lg font-medium tracking-tight text-white hover:bg-[#242a28] py-2 px-4 -ml-4 w-fit hover:text-main-green rounded-full transition-all duration-300"
+                            className="text-lg font-medium tracking-tight text-white hover:bg-[#112240] py-2 px-4 -ml-4 w-fit hover:text-main-green rounded-full transition-all duration-300"
                           >
                             {link.label}
                           </a>
@@ -233,4 +233,4 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
   );
 };
 
-export default Header;
+export default Header;

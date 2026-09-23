@@ -134,7 +134,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               target="_blank"
               rel="noreferrer"
               href="#get-started"
-              className="darkbtn flex justify-center items-center border border-main-green bg-[#242a28] w-full px-4 py-3.5 text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#242a28]/80 cursor-pointer"
+              className="darkbtn flex justify-center items-center border border-main-green bg-[#112240] w-full px-4 py-3.5 text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
             >
               Get Started
             </a>
