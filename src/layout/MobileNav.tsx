@@ -42,7 +42,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               type="button"
               onClick={onClose}
               aria-label="Close menu"
-              className="p-2 rounded-full text-white hover:text-main-green cursor-pointer"
+              className="p-2 rounded-full text-white hover:text-main-blue cursor-pointer"
             >
               <svg
                 stroke="currentColor"
@@ -67,7 +67,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                       target={item.external ? "_blank" : undefined}
                       rel={item.external ? "noreferrer" : undefined}
                       onClick={onClose}
-                      className="inline-block text-2xl font-dmsans tracking-tighter text-white hover:text-main-green transition-colors"
+                      className="inline-block text-2xl font-dmsans tracking-tighter text-white hover:text-main-blue transition-colors"
                     >
                       {item.label}
                     </a>
@@ -84,7 +84,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                           strokeWidth="0"
                           viewBox="0 0 512 512"
                           className={`h-4 w-4 text-white transition-transform duration-300 ${
-                            expandedIndex === idx ? "rotate-180 text-main-green" : "rotate-0"
+                            expandedIndex === idx ? "rotate-180 text-main-blue" : "rotate-0"
                           }`}
                         >
                           <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z" />
@@ -104,7 +104,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                               target={sublink.external ? "_blank" : undefined}
                               rel={sublink.external ? "noreferrer" : undefined}
                               onClick={onClose}
-                              className="text-lg text-gray-300 hover:text-main-green block py-1"
+                              className="text-lg text-gray-300 hover:text-main-blue block py-1"
                             >
                               {sublink.label}
                             </a>
@@ -113,7 +113,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                                 key={deepLink.label}
                                 href={deepLink.href}
                                 onClick={onClose}
-                                className="text-sm text-gray-400 hover:text-main-green block pl-4 py-0.5"
+                                className="text-sm text-gray-400 hover:text-main-blue block pl-4 py-0.5"
                               >
                                 {deepLink.label}
                               </a>
@@ -134,7 +134,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               target="_blank"
               rel="noreferrer"
               href="#get-started"
-              className="darkbtn flex justify-center items-center border border-main-green bg-[#112240] w-full px-4 py-3.5 text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
+              className="darkbtn flex justify-center items-center border border-main-blue bg-[#112240] w-full px-4 py-3.5 text-lg text-center tracking-tighter text-main-blue font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
             >
               Get Started
             </a>
@@ -142,7 +142,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               target="_blank"
               rel="noreferrer"
               href="#services"
-              className="btn-glow-shadow leftglow border border-main-green flex items-center justify-center w-full px-4 py-4 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer"
+              className="btn-glow-shadow leftglow border border-main-blue flex items-center justify-center w-full px-4 py-4 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full cursor-pointer"
             >
               Explore Services
             </a>

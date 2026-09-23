@@ -63,7 +63,7 @@ export const FeaturesGrid: React.FC = () => {
           target="_blank"
           rel="noreferrer"
           href="#services"
-          className="btn-glow-shadow leftglow border border-main-green px-6 md:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
+          className="btn-glow-shadow leftglow border border-main-blue px-6 md:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
         >
           Explore Luma Pay Services
         </a>

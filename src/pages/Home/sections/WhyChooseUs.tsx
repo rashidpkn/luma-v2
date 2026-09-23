@@ -43,7 +43,7 @@ export const WhyChooseUs: React.FC = () => {
           target="_blank"
           rel="noreferrer"
           href="#services"
-          className="btn-glow-shadow leftglow border border-main-green px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-bold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
+          className="btn-glow-shadow leftglow border border-main-blue px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-bold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
         >
           Explore Luma Pay Services
         </a>
@@ -51,7 +51,7 @@ export const WhyChooseUs: React.FC = () => {
           target="_blank"
           rel="noreferrer"
           href="#get-started"
-          className="darkbtn border border-main-green bg-[#112240] px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold hover:bg-[#112240]/80 rounded-full cursor-pointer transition-all"
+          className="darkbtn border border-main-blue bg-[#112240] px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-blue font-semibold hover:bg-[#112240]/80 rounded-full cursor-pointer transition-all"
         >
           Get Started
         </a>

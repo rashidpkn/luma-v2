@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                       target={item.external ? "_blank" : undefined}
                       rel={item.external ? "noreferrer" : undefined}
                       className={`text-white flex gap-x-1 relative py-2 z-20 rounded-[30px] px-3.5 items-center text-lg tracking-tighter transition-colors ${
-                        activeMega === index ? 'bg-[#112240] text-main-green' : 'hover:bg-[#112240] hover:text-main-green'
+                        activeMega === index ? 'bg-[#112240] text-main-blue' : 'hover:bg-[#112240] hover:text-main-blue'
                       }`}
                     >
                       {item.label}
@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                           strokeWidth="0"
                           viewBox="0 0 448 512"
                           className={`text-xs transition-transform duration-300 ml-1 ${
-                            activeMega === index ? 'text-main-green -rotate-180' : 'text-white'
+                            activeMega === index ? 'text-main-blue -rotate-180' : 'text-white'
                           }`}
                           height="1em"
                           width="1em"
@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
               <div className="flex items-center gap-x-3">
                 <button
                   type="button"
-                  className="rounded-md py-2 px-3 text-base font-semibold text-white flex items-center gap-2 cursor-pointer hover:text-main-green transition-colors"
+                  className="rounded-md py-2 px-3 text-base font-semibold text-white flex items-center gap-2 cursor-pointer hover:text-main-blue transition-colors"
                 >
                   <img
                     alt="EN"
@@ -102,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                   target="_blank"
                   rel="noreferrer"
                   href="#get-started"
-                  className="darkbtn flex items-center border border-main-green bg-[#112240] px-6 py-3 text-base text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
+                  className="darkbtn flex items-center border border-main-blue bg-[#112240] px-6 py-3 text-base text-center tracking-tighter text-main-blue font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
                 >
                   Download App
                 </a>
@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                   target="_blank"
                   rel="noreferrer"
                   href="#early-access"
-                  className="btn-glow-shadow leftglow border border-main-green px-7 py-3 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
+                  className="btn-glow-shadow leftglow border border-main-blue px-7 py-3 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
                 >
                   Get Started
                 </a>
@@ -138,7 +138,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                 target="_blank"
                 rel="noreferrer"
                 href="#early-access"
-                className="btn-glow-shadow leftglow border border-main-green px-4 py-1.5 text-sm tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full"
+                className="btn-glow-shadow leftglow border border-main-blue px-4 py-1.5 text-sm tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full"
               >
                 Start
               </a>
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                 type="button"
                 onClick={onOpenMobileMenu}
                 aria-label="Open menu"
-                className="inline-block p-2 rounded-full text-white hover:text-main-green cursor-pointer"
+                className="inline-block p-2 rounded-full text-white hover:text-main-blue cursor-pointer"
               >
                 <svg
                   stroke="currentColor"
@@ -187,7 +187,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
           >
             <div className="bg-[#0a192f] shadow-2xl py-12">
               <div className="max-w-[1400px] mx-auto px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 divide-x divide-main-green">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 divide-x divide-main-blue">
                   <div className="flex flex-col justify-start space-y-4 pr-8">
                     <h3 className="text-3xl font-bold tracking-tighter text-white">
                       {item.megaMenu.title}
@@ -206,7 +206,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                             href={link.href}
                             target={link.external ? "_blank" : undefined}
                             rel={link.external ? "noreferrer" : undefined}
-                            className="text-lg font-medium tracking-tight text-white hover:bg-[#112240] py-2 px-4 -ml-4 w-fit hover:text-main-green rounded-full transition-all duration-300"
+                            className="text-lg font-medium tracking-tight text-white hover:bg-[#112240] py-2 px-4 -ml-4 w-fit hover:text-main-blue rounded-full transition-all duration-300"
                           >
                             {link.label}
                           </a>
@@ -214,7 +214,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                             <a
                               key={sub.label}
                               href={sub.href}
-                              className="text-base tracking-tight text-gray-400 hover:text-main-green pl-4 py-1 transition-colors"
+                              className="text-base tracking-tight text-gray-400 hover:text-main-blue pl-4 py-1 transition-colors"
                             >
                               {sub.label}
                             </a>

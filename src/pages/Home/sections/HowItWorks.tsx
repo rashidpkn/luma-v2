@@ -19,7 +19,7 @@ export const HowItWorks: React.FC = () => {
           </h2>
           <p className="text-lg text-paragraph-200 tracking-tight leading-[26px] pt-2 md:pr-20">
             Choose a{" "}
-            <a className="underline text-main-green hover:underline transition-all duration-300" href="/plans">
+            <a className="underline text-main-blue hover:underline transition-all duration-300" href="/plans">
               plan
             </a>{" "}
             that suits your lifestyle—Personal or Business—then seamlessly manage both
@@ -76,7 +76,7 @@ export const HowItWorks: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href="#rewards"
-              className="underline text-main-green hover:underline transition-all duration-300"
+              className="underline text-main-blue hover:underline transition-all duration-300"
             >
               Our Loyalty Program
             </a>{" "}

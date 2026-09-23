@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
             Multi-Currency Accounts, <br />
             Foreign Exchange
           </h1>
-          <div className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-main-green mt-1">
+          <div className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-main-blue mt-1">
             & Cross-Border Payments.
           </div>
 
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href="#get-started"
-              className="darkbtn border border-main-green bg-[#112240] px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer transition-all"
+              className="darkbtn border border-main-blue bg-[#112240] px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-blue font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer transition-all"
             >
               Get Started
             </a>
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href="#services"
-              className="btn-glow-shadow leftglow border border-main-green px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer transition-all active:scale-95"
+              className="btn-glow-shadow leftglow border border-main-blue px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full cursor-pointer transition-all active:scale-95"
             >
               Explore Services
             </a>
@@ -89,7 +89,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://x.com/LumaPay_app"
-              className="text-white hover:text-main-green transition-colors"
+              className="text-white hover:text-main-blue transition-colors"
               aria-label="X (Twitter)"
             >
               <svg stroke="currentColor" fill="currentColor" viewBox="0 0 16 16" className="h-5 w-5 md:h-6 md:w-6">

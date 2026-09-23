@@ -24,7 +24,7 @@ export const WhatIsDigiTap: React.FC = () => {
           </h3>
           <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-3">
             Unlike traditional platforms that restrict international capabilities, Luma Pay{" "}
-            <a href="/plans" className="text-green-600 hover:underline">
+            <a href="/plans" className="text-main-blue hover:underline">
               tailored account plans
             </a>{" "}
             enable complete control of your global finances in one unified experience. This integration allows users to seamlessly switch between currencies, execute cross-border payments efficiently, and leverage advanced virtual currency conversions.
@@ -58,7 +58,7 @@ export const WhatIsDigiTap: React.FC = () => {
           </h3>
           <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-3">
             At its core, Luma Pay offers robust multi-currency accounts, competitive foreign exchange rates, and reliable remittance services. The{" "}
-            <a href="/personal" className="text-green-600 hover:underline">
+            <a href="/personal" className="text-main-blue hover:underline">
               personal and business
             </a>{" "}
             applications support global transfers, multi-currency holding, and advanced regulatory compliance, giving users everything they need to manage their finances globally.
@@ -74,7 +74,7 @@ export const WhatIsDigiTap: React.FC = () => {
           </h3>
           <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-3">
             Luma Pay serves a wide range of users, including individuals,{" "}
-            <a href="/business" className="text-green-600 hover:underline">
+            <a href="/business" className="text-main-blue hover:underline">
               businesses
             </a>
             , and international merchants who demand flexible cross-border transactions. It is ideal for expats, freelancers, and enterprises seeking a fast, secure solution for international remittances and multi-currency management.

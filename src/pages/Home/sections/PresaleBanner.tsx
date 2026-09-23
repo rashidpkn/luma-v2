@@ -32,7 +32,7 @@ export const PresaleBanner: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             href="#early-access"
-            className="btn-glow-shadow leftglow border border-main-green px-8 md:px-10 py-4 text-lg md:text-xl text-center tracking-tighter text-[#0f1d16] font-bold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
+            className="btn-glow-shadow leftglow border border-main-blue px-8 md:px-10 py-4 text-lg md:text-xl text-center tracking-tighter text-[#0f1d16] font-bold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
           >
             Join Luma Pay Early Access
           </a>

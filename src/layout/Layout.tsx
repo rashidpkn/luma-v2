@@ -9,7 +9,7 @@ export const Layout: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-heading flex flex-col font-primary selection:bg-main-green selection:text-black">
+    <div className="min-h-screen bg-white text-heading flex flex-col font-primary selection:bg-main-blue selection:text-black">
       {/* Mobile drawer navigation */}
       <MobileNav
         isOpen={mobileMenuOpen}
