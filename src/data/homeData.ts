@@ -54,7 +54,7 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 2,
     title: "Instant Foreign Exchange",
     description: "Luma Pay enables instant conversions between currencies at competitive rates. Whether you’re paying a foreign invoice or converting balances, exchanges happen in seconds, giving you real-time flexibility.",
-    image: "/images/homev3/why-choose/2.png",
+    image: "/images/homev3/why-choose/exchange-phone.png",
     imageRight: false,
   },
   {
