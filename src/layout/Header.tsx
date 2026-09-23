@@ -34,10 +34,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                 <img
                   alt="Luma Pay logo"
                   loading="eager"
-                  width="160"
-                  height="40"
-                  className="relative z-20 h-8 md:h-10 w-auto"
-                  src="/images/luma-logo-white.png"
+                  width="153"
+                  height="36"
+                  className="relative z-20 h-8 w-auto object-contain md:h-9"
+                  src="/images/luma-pay-wordmark.png"
                 />
               </a>
             </div>

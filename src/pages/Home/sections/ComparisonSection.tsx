@@ -1,76 +1,71 @@
 import React from "react";
 
+const columns = [
+  {
+    title: "Traditional Bank",
+    src: "/images/homev3/traditional/Digitap-Bank.png",
+    highlight: false,
+  },
+  {
+    title: "Crypto Exchange",
+    src: "/images/homev3/traditional/digitapCoin.png",
+    highlight: false,
+  },
+  {
+    title: "Luma Pay",
+    src: "/home images/Digitap Crypto Fiat Bank.png",
+    highlight: true,
+  },
+];
+
 export const ComparisonSection: React.FC = () => {
   return (
-    <section className="bg-black py-16 md:py-24 border-y border-white/10">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        {/* Headline */}
-        <h2 className="text-center text-3xl sm:text-4xl xl:text-[54px] xl:leading-[62px] text-white font-bold tracking-tighter mb-12 md:mb-16">
+    <section className="border-y border-white/10 bg-[#071422] py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 className="mb-10 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl md:mb-14 md:text-5xl">
           Traditional Bank vs Crypto Exchange
           <br className="hidden md:inline" /> vs Luma Pay
         </h2>
 
-        {/* 3 Columns Comparison */}
-        <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-center justify-between gap-6 lg:gap-8">
-          {/* Card 1: Traditional Bank */}
-          <div className="flex-1 flex flex-col items-center text-center">
-            <div className="w-44 h-44 md:w-52 md:h-52 relative flex items-center justify-center">
-              <img
-                alt="Traditional Bank"
-                src="/images/homev3/traditional/Digitap-Bank.png"
-                className="max-h-full max-w-full object-contain drop-shadow-xl"
-              />
-            </div>
-            <div className="mt-6 text-lg text-white">Traditional Bank</div>
-          </div>
-
-          {/* VS Divider 1 */}
-          <div className="flex items-center justify-center w-12 shrink-0">
-            <span className="text-3xl text-white font-medium">vs</span>
-          </div>
-
-          {/* Card 2: Crypto Exchange */}
-          <div className="flex-1 flex flex-col items-center text-center">
-            <div className="w-44 h-44 md:w-52 md:h-52 relative flex items-center justify-center">
-              <img
-                alt="Crypto Exchange"
-                src="/images/homev3/traditional/digitapCoin.png"
-                className="max-h-full max-w-full object-contain drop-shadow-xl"
-              />
-            </div>
-            <div className="mt-6 text-lg text-white">Crypto Exchange</div>
-          </div>
-
-          {/* VS Divider 2 */}
-          <div className="flex items-center justify-center w-12 shrink-0">
-            <span className="text-3xl text-white font-medium">vs</span>
-          </div>
-
-          {/* Card 3: Luma Pay */}
-          <div className="flex-1 flex flex-col items-center text-center">
-            <div className="w-44 h-44 md:w-52 md:h-52 relative flex items-center justify-center">
-              <img
-                alt="Luma Pay"
-                src="/home images/Digitap Crypto Fiat Bank.png"
-                className="max-h-full max-w-full object-contain drop-shadow-2xl"
-              />
-            </div>
-            <div className="mt-6 text-lg text-white">Luma Pay</div>
-          </div>
+        <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center md:gap-5">
+          {columns.map((column, index) => (
+            <React.Fragment key={column.title}>
+              {index > 0 && (
+                <div className="flex items-center justify-center">
+                  <span className="text-sm font-semibold tracking-[0.2em] text-[#90e0ef]">vs</span>
+                </div>
+              )}
+              <article
+                className={`flex flex-col items-center rounded-3xl border px-5 py-8 text-center ${
+                  column.highlight
+                    ? "border-main-blue/50 bg-[#112240] shadow-[0_0_40px_rgba(0,180,216,0.12)]"
+                    : "border-white/10 bg-[#0a192f]"
+                }`}
+              >
+                <div className="flex h-44 w-full items-center justify-center md:h-52">
+                  <img
+                    alt={column.title}
+                    src={column.src}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div className="mt-6 text-lg font-semibold text-white">{column.title}</div>
+              </article>
+            </React.Fragment>
+          ))}
         </div>
 
-        {/* Benefits Note & CTAs */}
-        <div className="mt-12 md:mt-16 max-w-3xl mx-auto text-center">
-          <p className="text-lg md:text-2xl text-gray-200 font-semibold mb-8">
+        <div className="mx-auto mt-12 max-w-3xl text-center md:mt-16">
+          <p className="mb-8 text-lg font-semibold text-gray-200 md:text-2xl">
             Luma Pay is designed to provide exclusive benefits to our users, making global finance simpler, faster, and more rewarding.
           </p>
 
-          <div className="flex flex-wrap justify-center items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <a
               target="_blank"
               rel="noreferrer"
               href="#services"
-              className="btn-glow-shadow leftglow border border-main-blue px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-white font-bold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
+              className="btn-glow-shadow leftglow cursor-pointer rounded-full border border-main-blue bg-main-blue px-8 py-3.5 text-center text-base font-bold tracking-tight text-white transition-transform active:scale-95 sm:text-lg"
             >
               Explore Services
             </a>
@@ -78,7 +73,7 @@ export const ComparisonSection: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href="#get-started"
-              className="darkbtn border border-main-blue bg-[#112240] px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-blue font-semibold hover:bg-[#112240]/80 rounded-full cursor-pointer transition-all"
+              className="darkbtn cursor-pointer rounded-full border border-main-blue bg-[#112240] px-8 py-3.5 text-center text-base font-semibold tracking-tight text-main-blue transition-all hover:bg-[#112240]/80 sm:text-lg"
             >
               Get Started
             </a>
