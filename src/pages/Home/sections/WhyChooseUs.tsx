@@ -4,28 +4,21 @@ import { whyChooseItems } from "../../../data/homeData";
 export const WhyChooseUs: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 md:py-24 font-primary">
-      {/* Title */}
-      <div className="max-w-3xl mx-auto mb-10 md:mb-16 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[64px] font-extrabold tracking-tighter text-heading">
-          Why Choose DigiTap as Your Crypto Fiat Banking Application
-        </h2>
-      </div>
-
       {/* 10 Alternating Rows */}
-      <div className="space-y-16 md:space-y-24">
+      <div className="space-y-12 md:space-y-16">
         {whyChooseItems.map((item) => (
           <div
             key={item.id}
-            className={`flex flex-col-reverse items-center justify-between gap-8 md:gap-16 ${
+            className={`flex flex-col-reverse items-center justify-between gap-8 md:gap-16 py-4 ${
               item.imageRight ? "lg:flex-row" : "lg:flex-row-reverse"
             }`}
           >
             {/* Text description */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] lg:leading-[50px] text-heading font-extrabold tracking-tighter">
+              <h2 className="text-3xl md:text-[42px] md:leading-[48px] lg:text-5xl lg:leading-[54px] text-heading font-extrabold tracking-tighter pt-4">
                 {item.title}
-              </h3>
-              <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-3 max-w-xl mx-auto lg:mx-0">
+              </h2>
+              <p className="text-lg text-heading tracking-tighter leading-[30px] pt-2 max-w-xl mx-auto lg:mx-0">
                 {item.description}
               </p>
             </div>
