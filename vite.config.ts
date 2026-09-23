@@ -13,4 +13,7 @@ export default defineConfig({
   server: {
     allowedHosts: ['.trycloudflare.com'],
   },
+    preview: {
+    allowedHosts: ['lumapay.net', 'www.lumapay.net'],
+  },
 })
