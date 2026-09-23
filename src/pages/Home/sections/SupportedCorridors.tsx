@@ -27,15 +27,17 @@ export const SupportedCorridors: React.FC = () => {
           compliance documentation.
         </p>
 
-        {/* Map Container */}
+        {/* Map */}
         <div className="w-full relative max-w-5xl mx-auto mb-16">
-          <img 
-            src="/corridor-map.svg" 
-            alt="Supported Corridors Map" 
-            className="w-full h-auto drop-shadow-2xl"
-          />
-          {/* Subtle Glow Behind Map */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[#00b4d8] opacity-10 blur-[100px] rounded-full pointer-events-none -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88%] h-[72%] bg-[#00b4d8]/25 blur-[100px] rounded-full pointer-events-none" />
+          <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#071422] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,180,216,0.16),transparent_68%)]" />
+            <img
+              src="/corridor-map.svg"
+              alt="World map highlighting Luma Pay corridors in Canada, the United Kingdom, Germany, the Netherlands, Ireland, the United States, and Australia"
+              className="relative w-full h-auto"
+            />
+          </div>
         </div>
 
         {/* Legend */}
