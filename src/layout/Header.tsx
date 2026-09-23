@@ -32,12 +32,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
             <div className="w-auto relative z-20">
               <a href="/" className="inline-block">
                 <img
-                  alt="Luma Pay logo"
+                  alt="Luma Pay"
                   loading="eager"
-                  width="160"
-                  height="40"
-                  className="relative z-20 h-8 md:h-10 w-auto"
-                  src="/images/luma-logo-white.png"
+                  width={3313}
+                  height={780}
+                  className="relative z-20 h-8 md:h-10 w-auto object-contain"
+                  src="/images/luma-pay-logo.png"
                 />
               </a>
             </div>
