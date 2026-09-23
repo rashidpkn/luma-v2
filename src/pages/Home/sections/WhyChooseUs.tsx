@@ -42,18 +42,18 @@ export const WhyChooseUs: React.FC = () => {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://presale.digitap.app/login"
+          href="#services"
           className="btn-glow-shadow leftglow border border-main-green px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-bold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
         >
-          Join $TAP Crypto Presale
+          Explore Luma Pay Services
         </a>
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://my.digitap.app/en/sign-up"
+          href="#get-started"
           className="darkbtn border border-main-green bg-[#242a28] px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold hover:bg-[#242a28]/80 rounded-full cursor-pointer transition-all"
         >
-          Download the App
+          Get Started
         </a>
       </div>
     </section>

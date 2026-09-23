@@ -23,7 +23,7 @@ export const AppCtaBanner: React.FC = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://my.digitap.app/en/sign-up"
+                href="#get-started"
                 className="btn-glow-shadow leftglow border border-main-green inline-flex items-center px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-bold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
               >
                 Download the App

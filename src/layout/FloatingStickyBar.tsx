@@ -50,13 +50,13 @@ export const FloatingStickyBar: React.FC = () => {
             }`}
           >
             <div className="flex gap-x-1.5 md:gap-x-2.5 justify-center items-center">
-              <span className="text-gray-400 text-xs md:text-sm font-medium">Current price</span>
-              <span className="font-bold text-xs md:text-sm text-white">0.0589 USDT</span>
-              <span className="line-through text-xs md:text-sm text-gray-500">0.14 USDT</span>
+              <span className="text-gray-400 text-xs md:text-sm font-medium">Limited offer</span>
+              <span className="font-bold text-xs md:text-sm text-white">0% FX Fees</span>
+              <span className="line-through text-xs md:text-sm text-gray-500">1.5% Fees</span>
             </div>
             <div>
               <span className="bg-main-green text-xs md:text-sm text-black font-bold px-2 py-0.5 rounded">
-                -57.93%
+                100% Off
               </span>
             </div>
           </div>
@@ -68,16 +68,16 @@ export const FloatingStickyBar: React.FC = () => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://presale.digitap.app/login"
+                  href="#early-access"
                   className="btn-glow-shadow leftglow border border-main-green px-3 py-1.5 text-xs text-[#0f1d16] font-bold bg-main-green rounded-full whitespace-nowrap"
                 >
-                  Buy $TAP Now
+                  Join Now
                 </a>
               </div>
 
               <div className="flex xl:gap-x-4 gap-x-1 xl:flex-row flex-col xl:justify-start justify-end xl:items-center items-end font-bold text-main-green w-full">
                 <span className="text-gray-400 text-[11px] md:text-sm font-semibold whitespace-nowrap">
-                  Price up in
+                  Offer ends in
                 </span>
                 <div className="flex flex-row gap-x-1 items-center">
                   <div className="flex flex-col items-center justify-center leading-tight w-7">
@@ -142,10 +142,10 @@ export const FloatingStickyBar: React.FC = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://presale.digitap.app/login"
+            href="#early-access"
             className="btn-glow-shadow leftglow border border-main-green px-6 py-3 text-base text-[#0f1d16] font-bold bg-main-green rounded-full whitespace-nowrap cursor-pointer hover:scale-105 transition-transform"
           >
-            Buy $TAP Now
+            Join Now
           </a>
         </div>
       </div>

@@ -31,11 +31,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <div className="flex items-center justify-between">
             <a href="/" onClick={onClose} className="inline-block -ml-2">
               <img
-                alt="Digitap Logo"
+                alt="Luma Pay Logo"
                 width="150"
                 height="50"
                 className="h-8 w-auto"
-                src="/images/logo.svg"
+                src="/images/luma-logo-white.png"
               />
             </a>
             <button
@@ -133,18 +133,18 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://my.digitap.app/en/sign-up"
+              href="#get-started"
               className="darkbtn flex justify-center items-center border border-main-green bg-[#242a28] w-full px-4 py-3.5 text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#242a28]/80 cursor-pointer"
             >
-              Download Banking App
+              Get Started
             </a>
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://presale.digitap.app/login"
+              href="#services"
               className="btn-glow-shadow leftglow border border-main-green flex items-center justify-center w-full px-4 py-4 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer"
             >
-              Buy $TAP Token
+              Explore Services
             </a>
           </div>
         </div>

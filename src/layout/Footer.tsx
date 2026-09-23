@@ -10,11 +10,11 @@ export const Footer: React.FC = () => {
           <div>
             <a href="/" className="inline-block">
               <img
-                alt="Digitap Logo"
+                alt="Luma Pay Logo"
                 width="160"
                 height="40"
                 className="w-auto h-9"
-                src="/images/logo.svg"
+                src="/images/luma-logo-white.png"
               />
             </a>
           </div>
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://x.com/DigiTap_app"
+              href="https://x.com/LumaPay_app"
               aria-label="X (Twitter)"
               className="w-10 h-10 rounded-full bg-[#18261f] hover:bg-main-green/20 text-white hover:text-main-green flex items-center justify-center transition-colors"
             >
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://t.me/digitap_app_community"
+              href="https://t.me/lumapay_community"
               aria-label="Telegram"
               className="w-10 h-10 rounded-full bg-[#18261f] hover:bg-main-green/20 text-white hover:text-main-green flex items-center justify-center transition-colors"
             >
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://www.tiktok.com/@digitap.app"
+              href="https://www.tiktok.com/@lumapay"
               aria-label="TikTok"
               className="w-10 h-10 rounded-full bg-[#18261f] hover:bg-main-green/20 text-white hover:text-main-green flex items-center justify-center transition-colors"
             >
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://www.youtube.com/@DigitapWorld"
+              href="https://www.youtube.com/@LumaPayWorld"
               aria-label="YouTube"
               className="w-10 h-10 rounded-full bg-[#18261f] hover:bg-main-green/20 text-white hover:text-main-green flex items-center justify-center transition-colors"
             >
@@ -117,22 +117,22 @@ export const Footer: React.FC = () => {
               We’re here to help 24/7 on email or submit a contact form
             </p>
             <div className="space-y-1.5">
-              <a href="mailto:support@digitap.app" className="text-main-green hover:underline block text-sm">
-                support@digitap.app
+              <a href="mailto:support@lumapay.app" className="text-main-green hover:underline block text-sm">
+                support@lumapay.app
               </a>
-              <a href="mailto:marketing@digitap.app" className="text-main-green hover:underline block text-sm">
-                marketing@digitap.app
+              <a href="mailto:marketing@lumapay.app" className="text-main-green hover:underline block text-sm">
+                marketing@lumapay.app
               </a>
             </div>
 
             {/* App download badges */}
             <div className="mt-6 flex flex-col gap-2">
-              <span className="text-xs text-gray-400">Download the Digitap app</span>
+              <span className="text-xs text-gray-400">Download the Luma Pay app</span>
               <div className="flex gap-2">
-                <a href="https://my.digitap.app/en/sign-up" target="_blank" rel="noreferrer">
+                <a href="#get-started" target="_blank" rel="noreferrer">
                   <img src="/images/footer/appStore.svg" alt="App Store" className="h-9 w-auto" />
                 </a>
-                <a href="https://my.digitap.app/en/sign-up" target="_blank" rel="noreferrer">
+                <a href="#get-started" target="_blank" rel="noreferrer">
                   <img src="/images/footer/googleStore.svg" alt="Google Play" className="h-9 w-auto" />
                 </a>
               </div>
@@ -152,8 +152,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
           <p className="leading-relaxed">
-            DigiTap is a fintech application powered by licensed financial partners to provide digital banking services.
-            The official beta version of the DigiTap App is live. Please help us improve the service by providing feedback.
+            Luma Pay is a fintech application powered by licensed financial partners to provide digital banking services.
+            The official beta version of the Luma Pay App is live. Please help us improve the service by providing feedback.
           </p>
         </div>
       </div>

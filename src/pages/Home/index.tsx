@@ -26,16 +26,16 @@ export const HomePage: React.FC = () => {
       {/* 4. How It Works, Debit Cards, and Presale */}
       <HowItWorks />
 
-      {/* 5. What is DigiTap & Core Features */}
+      {/* 5. What is Luma Pay & Core Features */}
       <WhatIsDigiTap />
 
-      {/* 6. Comparison: Traditional Bank vs Crypto Exchange vs DigiTap */}
+      {/* 6. Comparison: Traditional Bank vs Crypto Exchange vs Luma Pay */}
       <ComparisonSection />
 
-      {/* 7. Why Choose DigiTap 10 Features */}
+      {/* 7. Why Choose Luma Pay 10 Features */}
       <WhyChooseUs />
 
-      {/* 8. DigiTap App Interface Showcase */}
+      {/* 8. Luma Pay App Interface Showcase */}
       <InterfaceShowcase />
 
       {/* 9. Complete Crypto Fiat Bank Features 6-Card Grid */}

@@ -6,19 +6,13 @@ export const WhatIsDigiTap: React.FC = () => {
       {/* Main Title & Lead */}
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl xl:text-[60px] xl:leading-[68px] text-heading font-bold tracking-tighter pt-6 md:pt-12">
-          What is DigiTap Crypto Fiat Bank
+          What is Luma Pay
         </h2>
         <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-5">
-          DigiTap App is a fintech application that combines cryptocurrency and traditional fiat banking in a
-          single interface. Launched in 2025, it enables users to hold and manage both digital assets and traditional
-          currencies across 20+ fiat denominations and 100+ cryptocurrencies. The platform supports multi-chain
-          wallet functionality, covering Solana, Polygon, and other blockchain networks.
+          Luma Pay is a comprehensive financial platform that offers multi-currency accounts, foreign exchange, and cross-border payment services. As a registered Money Services Business, it enables users to seamlessly hold and manage over 30 traditional currencies while also offering virtual currency capabilities. 
           <br />
           <br />
-          Swift supported offshore bank accounts through global banking partners with key features including instant
-          crypto-to-fiat conversions, physical and virtual debit cards issued through partnerships with major payment
-          processors, and real-time currency exchange. DigiTap serves both individual users and global businesses,
-          providing a single hub to securely manage, store, and grow their fiat and crypto assets together.
+          Backed by global banking partners, Luma Pay provides instant currency conversions, domestic and international remittances, and flexible payment cards. We serve both individual users and global businesses, providing a unified hub to securely manage and transfer funds without boundaries.
         </p>
       </div>
 
@@ -29,13 +23,11 @@ export const WhatIsDigiTap: React.FC = () => {
             Core Value Proposition
           </h3>
           <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-3">
-            Unlike traditional banks that limit users to fiat currencies, DigiTap{" "}
+            Unlike traditional platforms that restrict international capabilities, Luma Pay{" "}
             <a href="/plans" className="text-green-600 hover:underline">
-              crypto fiat bank account plans
+              tailored account plans
             </a>{" "}
-            enable complete control of both crypto and fiat money in one unified experience. This integration enables
-            users to seamlessly switch between currencies, make global payments, and leverage the best features of both
-            financial systems.
+            enable complete control of your global finances in one unified experience. This integration allows users to seamlessly switch between currencies, execute cross-border payments efficiently, and leverage advanced virtual currency conversions.
           </p>
         </div>
         <div className="w-full flex justify-center items-center">
@@ -65,13 +57,11 @@ export const WhatIsDigiTap: React.FC = () => {
             Key Capabilities
           </h3>
           <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-3">
-            At its core, DigiTap offers multi-currency fiat accounts, multi-chain crypto wallets, and instant
-            crypto-to-fiat conversions supported by Visa connectivity. The{" "}
+            At its core, Luma Pay offers robust multi-currency accounts, competitive foreign exchange rates, and reliable remittance services. The{" "}
             <a href="/personal" className="text-green-600 hover:underline">
-              personal crypto fiat banking
+              personal and business
             </a>{" "}
-            application supports global transfers, card payments, and advanced security, giving users everything they
-            need to manage modern finances without borders.
+            applications support global transfers, multi-currency holding, and advanced regulatory compliance, giving users everything they need to manage their finances globally.
           </p>
         </div>
       </div>
@@ -83,12 +73,11 @@ export const WhatIsDigiTap: React.FC = () => {
             Target Users
           </h3>
           <p className="text-base md:text-lg text-heading tracking-tight leading-relaxed pt-3">
-            DigiTap crypto fiat bank serves a wide range of users, including individuals,{" "}
+            Luma Pay serves a wide range of users, including individuals,{" "}
             <a href="/business" className="text-green-600 hover:underline">
-              business crypto fiat bank accounts
+              businesses
             </a>
-            , traders, and investors who demand flexibility and speed. It is ideal for global citizens, digital nomads,
-            and cross-border enterprises seeking a seamless solution for everyday banking and digital asset management.
+            , and international merchants who demand flexible cross-border transactions. It is ideal for expats, freelancers, and enterprises seeking a fast, secure solution for international remittances and multi-currency management.
           </p>
         </div>
         <div className="w-full flex justify-center items-center">

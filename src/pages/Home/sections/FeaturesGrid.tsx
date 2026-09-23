@@ -8,19 +8,17 @@ export const FeaturesGrid: React.FC = () => {
       <div className="flex flex-col-reverse lg:flex-row justify-center items-center">
         <div className="w-full xl:w-2/5 mt-10 xl:mt-0">
           <h2 className="text-3xl md:text-[42px] md:leading-[48px] lg:text-5xl lg:leading-[54px] text-heading font-extrabold tracking-tighter xl:pr-6">
-            Complete Crypto Fiat Bank Features for Modern Banking
+            Complete Financial Features for Modern Banking
           </h2>
           <p className="text-lg text-heading tracking-tighter leading-[30px] pt-5">
-            DigiTap offers a comprehensive suite of crypto fiat banking features, designed to redefine how you
-            manage your finances in the digital age. Our crypto fiat banking application combines the power of
-            traditional banking with blockchain innovation, providing you with access to advanced tools for both
-            fiat and cryptocurrency.
+            Luma Pay offers a comprehensive suite of financial features, designed to redefine how you
+            manage your finances in the digital age. Our platform combines the power of
+            multi-currency accounts with virtual currency capabilities, providing you with access to advanced tools for seamless cross-border transactions.
             <br />
             <br />
-            From instant conversions and multi-currency wallets to global payments and staking, DigiTap provides
-            everything you need to stay in control. As a complete crypto fiat bank, it offers reliable, compliant,
-            and secure digital asset banking solutions that connect traditional finance with the future of Web3
-            banking.
+            From instant foreign exchange and multi-currency accounts to global payments, Luma Pay provides
+            everything you need to stay in control. As a registered Money Services Business, it offers reliable, compliant,
+            and secure financial solutions that connect traditional finance with modern digital assets.
           </p>
         </div>
         <div className="w-full xl:w-3/5 relative bg-white flex flex-col xl:flex-row justify-center items-center">
@@ -64,10 +62,10 @@ export const FeaturesGrid: React.FC = () => {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://presale.digitap.app/login"
+          href="#services"
           className="btn-glow-shadow leftglow border border-main-green px-6 md:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
         >
-          Join $TAP Crypto Presale
+          Explore Luma Pay Services
         </a>
       </div>
     </section>

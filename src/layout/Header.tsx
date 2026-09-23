@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { navItems } from "../data/navigation";
 
 interface HeaderProps {
@@ -6,8 +6,25 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
+  const [activeMega, setActiveMega] = useState<number | null>(null);
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleEnter = useCallback((index: number) => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    setActiveMega(index);
+  }, []);
+
+  const handleLeave = useCallback(() => {
+    closeTimeout.current = setTimeout(() => {
+      setActiveMega(null);
+    }, 200);
+  }, []);
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 w-full transition-colors duration-300 hover:bg-[#101d16]">
+    <header className={`absolute top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${activeMega !== null ? 'bg-[#101d16]' : 'hover:bg-[#101d16]'}`}>
       <div className="py-4 md:py-6" id="hero">
         <div className="w-full z-20">
           <div className="w-full flex items-center justify-between px-4 md:px-6 lg:px-10">
@@ -15,12 +32,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
             <div className="w-auto relative z-20">
               <a href="/" className="inline-block">
                 <img
-                  alt="Digitap crypto-fiat bank logo"
+                  alt="Luma Pay logo"
                   loading="eager"
                   width="160"
                   height="40"
                   className="relative z-20 h-8 md:h-10 w-auto"
-                  src="/images/logo.svg"
+                  src="/images/luma-logo-white.png"
                 />
               </a>
             </div>
@@ -28,13 +45,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
             {/* Desktop Navigation */}
             <nav className="w-auto hidden 2xl:block">
               <div className="w-full hidden xl:flex 2xl:gap-x-0.5 items-center">
-                {navItems.map((item) => (
-                  <div key={item.label} className="group">
+                {navItems.map((item, index) => (
+                  <div
+                    key={item.label}
+                    onMouseEnter={() => item.megaMenu ? handleEnter(index) : setActiveMega(null)}
+                    onMouseLeave={handleLeave}
+                  >
                     <a
                       href={item.href}
                       target={item.external ? "_blank" : undefined}
                       rel={item.external ? "noreferrer" : undefined}
-                      className="text-white flex gap-x-1 relative group-hover:bg-[#242a28] py-2 z-20 rounded-[30px] px-3.5 items-center text-lg tracking-tighter group-hover:text-main-green transition-colors"
+                      className={`text-white flex gap-x-1 relative py-2 z-20 rounded-[30px] px-3.5 items-center text-lg tracking-tighter transition-colors ${
+                        activeMega === index ? 'bg-[#242a28] text-main-green' : 'hover:bg-[#242a28] hover:text-main-green'
+                      }`}
                     >
                       {item.label}
                       {item.megaMenu && (
@@ -43,7 +66,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                           fill="currentColor"
                           strokeWidth="0"
                           viewBox="0 0 448 512"
-                          className="text-xs text-white group-hover:text-main-green group-hover:-rotate-180 transition-transform duration-300 ml-1"
+                          className={`text-xs transition-transform duration-300 ml-1 ${
+                            activeMega === index ? 'text-main-green -rotate-180' : 'text-white'
+                          }`}
                           height="1em"
                           width="1em"
                         >
@@ -51,51 +76,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                         </svg>
                       )}
                     </a>
-
-                    {/* Mega Menu Dropdown */}
-                    {item.megaMenu && (
-                      <div className="group-hover:block hidden absolute top-full left-0 w-full bg-[#101d16] shadow-2xl py-12 z-40">
-                        <div className="max-w-[1400px] mx-auto px-8">
-                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 divide-x divide-main-green">
-                            <div className="flex flex-col justify-start space-y-4 pr-8">
-                              <h3 className="text-3xl font-bold tracking-tighter text-white">
-                                {item.megaMenu.title}
-                              </h3>
-                              {item.megaMenu.description && (
-                                <p className="text-base text-gray-300 tracking-tighter max-w-md">
-                                  {item.megaMenu.description}
-                                </p>
-                              )}
-                            </div>
-                            <div className="grid gap-y-4 grid-cols-2 pl-12">
-                              {item.megaMenu.columns.flatMap((col) =>
-                                col.links.map((link) => (
-                                  <div key={link.label} className="flex flex-col gap-y-2">
-                                    <a
-                                      href={link.href}
-                                      target={link.external ? "_blank" : undefined}
-                                      rel={link.external ? "noreferrer" : undefined}
-                                      className="text-lg font-medium tracking-tight text-white hover:bg-[#242a28] py-2 px-4 -ml-4 w-fit hover:text-main-green rounded-full transition-all duration-300"
-                                    >
-                                      {link.label}
-                                    </a>
-                                    {link.sublinks?.map((sub) => (
-                                      <a
-                                        key={sub.label}
-                                        href={sub.href}
-                                        className="text-base tracking-tight text-gray-400 hover:text-main-green pl-4 py-1 transition-colors"
-                                      >
-                                        {sub.label}
-                                      </a>
-                                    ))}
-                                  </div>
-                                ))
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -121,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://my.digitap.app/en/sign-up"
+                  href="#get-started"
                   className="darkbtn flex items-center border border-main-green bg-[#242a28] px-6 py-3 text-base text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#242a28]/80 cursor-pointer"
                 >
                   Download App
@@ -130,10 +110,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://presale.digitap.app/login"
+                  href="#early-access"
                   className="btn-glow-shadow leftglow border border-main-green px-7 py-3 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
                 >
-                  Buy $TAP
+                  Get Started
                 </a>
               </div>
             </div>
@@ -157,10 +137,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://presale.digitap.app/login"
+                href="#early-access"
                 className="btn-glow-shadow leftglow border border-main-green px-4 py-1.5 text-sm tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full"
               >
-                $TAP
+                Start
               </a>
 
               <button
@@ -190,8 +170,67 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
           </div>
         </div>
       </div>
+
+      {/* Mega Menu Dropdowns — rendered outside the nav items so hovering the panel keeps it open */}
+      {navItems.map((item, index) =>
+        item.megaMenu ? (
+          <div
+            key={`mega-${item.label}`}
+            className={`absolute left-0 w-full z-40 transition-all duration-200 ${
+              activeMega === index
+                ? 'opacity-100 visible translate-y-0'
+                : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+            }`}
+            style={{ top: '100%' }}
+            onMouseEnter={() => handleEnter(index)}
+            onMouseLeave={handleLeave}
+          >
+            <div className="bg-[#101d16] shadow-2xl py-12 border-t border-white/5">
+              <div className="max-w-[1400px] mx-auto px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 divide-x divide-main-green">
+                  <div className="flex flex-col justify-start space-y-4 pr-8">
+                    <h3 className="text-3xl font-bold tracking-tighter text-white">
+                      {item.megaMenu.title}
+                    </h3>
+                    {item.megaMenu.description && (
+                      <p className="text-base text-gray-300 tracking-tighter max-w-md">
+                        {item.megaMenu.description}
+                      </p>
+                    )}
+                  </div>
+                  <div className="grid gap-y-4 grid-cols-2 pl-12">
+                    {item.megaMenu.columns.flatMap((col) =>
+                      col.links.map((link) => (
+                        <div key={link.label} className="flex flex-col gap-y-2">
+                          <a
+                            href={link.href}
+                            target={link.external ? "_blank" : undefined}
+                            rel={link.external ? "noreferrer" : undefined}
+                            className="text-lg font-medium tracking-tight text-white hover:bg-[#242a28] py-2 px-4 -ml-4 w-fit hover:text-main-green rounded-full transition-all duration-300"
+                          >
+                            {link.label}
+                          </a>
+                          {link.sublinks?.map((sub) => (
+                            <a
+                              key={sub.label}
+                              href={sub.href}
+                              className="text-base tracking-tight text-gray-400 hover:text-main-green pl-4 py-1 transition-colors"
+                            >
+                              {sub.label}
+                            </a>
+                          ))}
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null
+      )}
     </header>
   );
 };
 
-export default Header;
+export default Header;

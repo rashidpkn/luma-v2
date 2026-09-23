@@ -7,7 +7,7 @@ export const ComparisonSection: React.FC = () => {
         {/* Headline */}
         <h2 className="text-center text-3xl sm:text-4xl xl:text-[54px] xl:leading-[62px] text-white font-bold tracking-tighter mb-12 md:mb-16">
           Traditional Bank vs Crypto Exchange
-          <br className="hidden md:inline" /> vs DigiTap Crypto Fiat Bank
+          <br className="hidden md:inline" /> vs Luma Pay
         </h2>
 
         {/* 3 Columns Comparison */}
@@ -46,39 +46,38 @@ export const ComparisonSection: React.FC = () => {
             <span className="text-3xl text-white font-medium">vs</span>
           </div>
 
-          {/* Card 3: DigiTap Crypto Fiat Bank */}
+          {/* Card 3: Luma Pay */}
           <div className="flex-1 flex flex-col items-center text-center">
             <div className="w-44 h-44 md:w-52 md:h-52 relative flex items-center justify-center">
               <img
-                alt="DigiTap Crypto-Fiat Bank"
+                alt="Luma Pay"
                 src="/images/homev3/traditional/DigitapPhone.png"
                 className="max-h-full max-w-full object-contain drop-shadow-2xl"
               />
             </div>
-            <div className="mt-6 text-lg text-white">Digitap Crypto Fiat Bank</div>
+            <div className="mt-6 text-lg text-white">Luma Pay</div>
           </div>
         </div>
 
         {/* Benefits Note & CTAs */}
         <div className="mt-12 md:mt-16 max-w-3xl mx-auto text-center">
           <p className="text-lg md:text-2xl text-gray-200 font-semibold mb-8">
-            DigiTap crypto fiat bank is powered by the $TAP token, which provides exclusive benefits to our banking
-            community.
+            Luma Pay is designed to provide exclusive benefits to our users, making global finance simpler, faster, and more rewarding.
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-4">
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://presale.digitap.app/login"
+              href="#services"
               className="btn-glow-shadow leftglow border border-main-green px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-bold bg-main-green rounded-full cursor-pointer transition-transform active:scale-95"
             >
-              Buy $TAP Now
+              Explore Services
             </a>
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://my.digitap.app/en/sign-up"
+              href="#get-started"
               className="darkbtn border border-main-green bg-[#242a28] px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold hover:bg-[#242a28]/80 rounded-full cursor-pointer transition-all"
             >
               Get Started

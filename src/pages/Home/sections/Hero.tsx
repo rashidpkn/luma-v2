@@ -23,16 +23,15 @@ export const Hero: React.FC = () => {
       <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-6 lg:px-10 py-12 md:py-20 w-full">
         <div className="max-w-3xl">
           <h1 className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-white">
-            Your Money, <br />
-            One App.
+            Multi-Currency Accounts, <br />
+            Foreign Exchange
           </h1>
           <div className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-main-green mt-1">
-            Crypto and Fiat.
+            & Cross-Border Payments.
           </div>
 
           <p className="text-lg md:text-2xl text-gray-200 font-semibold tracking-tighter pt-6 pb-6 max-w-2xl leading-snug">
-            DigiTap is a mobile app that combines your fiat accounts, crypto wallets, and debit cards in one place.
-            Hold 20+ currencies. Trade 100+ cryptos. Spend either instantly.
+            Luma Pay provides multi-currency accounts, foreign exchange, and remittance services for businesses and individuals, with virtual currency conversion available as an additional capability.
           </p>
 
           {/* Action CTAs */}
@@ -40,18 +39,18 @@ export const Hero: React.FC = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://my.digitap.app/en/sign-up"
+              href="#get-started"
               className="darkbtn border border-main-green bg-[#242a28] px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-green font-semibold rounded-full hover:bg-[#242a28]/80 cursor-pointer transition-all"
             >
-              Download Banking App
+              Get Started
             </a>
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://presale.digitap.app/login"
+              href="#services"
               className="btn-glow-shadow leftglow border border-main-green px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-green rounded-full cursor-pointer transition-all active:scale-95"
             >
-              Buy $TAP Token
+              Explore Services
             </a>
           </div>
 
@@ -89,7 +88,7 @@ export const Hero: React.FC = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://x.com/DigiTap_app"
+              href="https://x.com/LumaPay_app"
               className="text-white hover:text-main-green transition-colors"
               aria-label="X (Twitter)"
             >

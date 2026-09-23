@@ -3,7 +3,7 @@ import React from "react";
 export const InterfaceShowcase: React.FC = () => {
   return (
     <section
-      aria-label="DigiTap App Interface Showcase"
+      aria-label="Luma Pay App Interface Showcase"
       className="relative bg-[#0b0b0b] bg-cover bg-center bg-no-repeat text-white overflow-hidden h-[400px] sm:h-[550px] md:h-[750px] w-full border-y border-white/5"
       style={{ backgroundImage: "url('/images/homev3/app-interface/bgImageUpdated.webp')" }}
     >

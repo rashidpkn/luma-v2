@@ -35,7 +35,7 @@ export const StatsBar: React.FC = () => {
               100K+
             </div>
             <div className="text-xs md:text-sm font-semibold text-[#4A534F] mt-1">
-              Connected Wallets
+              Global Users
             </div>
           </div>
         </div>
@@ -50,10 +50,10 @@ export const StatsBar: React.FC = () => {
           </div>
           <div>
             <div className="text-3xl md:text-4xl 2xl:text-[50px] font-bold text-[#0F1D16] leading-none">
-              100+
+              30+
             </div>
             <div className="text-xs md:text-sm font-semibold text-[#4A534F] mt-1">
-              Cryptocurrencies Supported
+              Currencies Supported
             </div>
           </div>
         </div>
