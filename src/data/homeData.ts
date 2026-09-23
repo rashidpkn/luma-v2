@@ -89,7 +89,7 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 7,
     title: "Payment Cards",
     description: "Activate virtual cards instantly and order physical cards for global spending. Use your Luma Pay balance anywhere, giving you complete flexibility for your international spending.",
-    image: "/images/homev3/why-choose/7.png",
+    image: "/images/homev3/why-choose/cards-phone.png",
     imageRight: true,
   },
   {
