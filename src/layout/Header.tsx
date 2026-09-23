@@ -185,7 +185,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
             onMouseEnter={() => handleEnter(index)}
             onMouseLeave={handleLeave}
           >
-            <div className="bg-[#101d16] shadow-2xl py-12 border-t border-white/5">
+            <div className="bg-[#101d16] shadow-2xl py-12">
               <div className="max-w-[1400px] mx-auto px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 divide-x divide-main-green">
                   <div className="flex flex-col justify-start space-y-4 pr-8">
