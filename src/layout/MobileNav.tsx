@@ -24,7 +24,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         style={{ backgroundImage: "url('/images/main/hero/mobbg.png')" }}
       >
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-[#0f1d16]/95 -z-10" />
+        <div className="absolute inset-0 bg-dark-navy/95 -z-10" />
 
         <div className="relative flex w-full flex-col justify-between min-h-full pb-10">
           {/* Header in mobile menu */}
@@ -142,7 +142,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               target="_blank"
               rel="noreferrer"
               href="#services"
-              className="btn-glow-shadow leftglow border border-main-blue flex items-center justify-center w-full px-4 py-4 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full cursor-pointer"
+              className="btn-glow-shadow leftglow border border-main-blue flex items-center justify-center w-full px-4 py-4 text-lg text-center tracking-tighter text-white font-semibold bg-main-blue rounded-full cursor-pointer"
             >
               Explore Services
             </a>

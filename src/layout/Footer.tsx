@@ -3,7 +3,7 @@ import { footerColumns } from "../data/navigation";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="font-primary bg-[#0f1d16] border-t border-white/5 relative z-10" id="footer">
+    <footer className="font-primary bg-dark-navy border-t border-white/5 relative z-10" id="footer">
       <div className="mx-auto max-w-[1400px] px-4 md:px-6 lg:px-8 py-12 lg:py-16">
         {/* Top row: Logo and Social links */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-12 border-b border-white/10">

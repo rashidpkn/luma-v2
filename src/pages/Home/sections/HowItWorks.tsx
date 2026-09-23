@@ -42,7 +42,7 @@ export const HowItWorks: React.FC = () => {
 
       {/* 2. Physical & Virtual Debit Cards */}
       <div className="flex flex-col lg:flex-row justify-center items-center gap-10 mt-16">
-        <div className="w-full relative bg-white flex xl:block flex-col xl:flex-row justify-center items-center xl:pt-0">
+        <div className="w-full relative bg-transparent flex xl:block flex-col xl:flex-row justify-center items-center xl:pt-0">
           <img
             alt="fiat"
             src="/images/homev3/poweryYour/wallet.png"

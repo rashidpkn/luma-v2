@@ -55,7 +55,7 @@ export const FloatingStickyBar: React.FC = () => {
               <span className="line-through text-xs md:text-sm text-gray-500">1.5% Fees</span>
             </div>
             <div>
-              <span className="bg-main-blue text-xs md:text-sm text-black font-bold px-2 py-0.5 rounded">
+              <span className="bg-main-blue text-xs md:text-sm text-white font-bold px-2 py-0.5 rounded">
                 100% Off
               </span>
             </div>
@@ -69,7 +69,7 @@ export const FloatingStickyBar: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   href="#early-access"
-                  className="btn-glow-shadow leftglow border border-main-blue px-3 py-1.5 text-xs text-[#0f1d16] font-bold bg-main-blue rounded-full whitespace-nowrap"
+                  className="btn-glow-shadow leftglow border border-main-blue px-3 py-1.5 text-xs text-white font-bold bg-main-blue rounded-full whitespace-nowrap"
                 >
                   Join Now
                 </a>
@@ -143,7 +143,7 @@ export const FloatingStickyBar: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             href="#early-access"
-            className="btn-glow-shadow leftglow border border-main-blue px-6 py-3 text-base text-[#0f1d16] font-bold bg-main-blue rounded-full whitespace-nowrap cursor-pointer hover:scale-105 transition-transform"
+            className="btn-glow-shadow leftglow border border-main-blue px-6 py-3 text-base text-white font-bold bg-main-blue rounded-full whitespace-nowrap cursor-pointer hover:scale-105 transition-transform"
           >
             Join Now
           </a>

@@ -3,7 +3,7 @@ import { heroBadges } from "../../../data/homeData";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative font-primary max-w-full min-h-[90vh] md:min-h-screen bg-[#0f1d16] flex items-center pt-28 md:pt-36 overflow-hidden">
+    <section className="relative font-primary max-w-full min-h-[90vh] md:min-h-screen bg-dark-navy flex items-center pt-28 md:pt-36 overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
             Multi-Currency Accounts, <br />
             Foreign Exchange
           </h1>
-          <div className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-main-blue mt-1">
+          <div className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-white mt-1">
             & Cross-Border Payments.
           </div>
 
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href="#services"
-              className="btn-glow-shadow leftglow border border-main-blue px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full cursor-pointer transition-all active:scale-95"
+              className="btn-glow-shadow leftglow border border-main-blue px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-white font-semibold bg-main-blue rounded-full cursor-pointer transition-all active:scale-95"
             >
               Explore Services
             </a>

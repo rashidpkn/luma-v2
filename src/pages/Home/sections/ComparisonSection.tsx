@@ -70,7 +70,7 @@ export const ComparisonSection: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               href="#services"
-              className="btn-glow-shadow leftglow border border-main-blue px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-[#0f1d16] font-bold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
+              className="btn-glow-shadow leftglow border border-main-blue px-8 py-3.5 text-base sm:text-lg text-center tracking-tighter text-white font-bold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
             >
               Explore Services
             </a>

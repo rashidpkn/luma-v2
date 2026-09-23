@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                   target="_blank"
                   rel="noreferrer"
                   href="#early-access"
-                  className="btn-glow-shadow leftglow border border-main-blue px-7 py-3 text-lg text-center tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
+                  className="btn-glow-shadow leftglow border border-main-blue px-7 py-3 text-lg text-center tracking-tighter text-white font-semibold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
                 >
                   Get Started
                 </a>
@@ -138,7 +138,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
                 target="_blank"
                 rel="noreferrer"
                 href="#early-access"
-                className="btn-glow-shadow leftglow border border-main-blue px-4 py-1.5 text-sm tracking-tighter text-[#0f1d16] font-semibold bg-main-blue rounded-full"
+                className="btn-glow-shadow leftglow border border-main-blue px-4 py-1.5 text-sm tracking-tighter text-white font-semibold bg-main-blue rounded-full"
               >
                 Start
               </a>
