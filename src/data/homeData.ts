@@ -103,14 +103,14 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 9,
     title: "Registered MSB",
     description: "Luma Pay operates as a registered Money Services Business under strict financial standards, ensuring transparency, regulatory compliance, and maximum safety for all users.",
-    image: "/images/homev3/why-choose/9.webp",
+    image: "/images/homev3/why-choose/msb-phone.png",
     imageRight: true,
   },
   {
     id: 10,
     title: "Business & Individual Accounts",
     description: "Whether you are a freelancer receiving international payments or a business managing global payroll, Luma Pay provides tailored solutions for both individuals and enterprises.",
-    image: "/images/homev3/why-choose/10.png",
+    image: "/images/homev3/why-choose/business-phone.png",
     imageRight: false,
   },
 ];
