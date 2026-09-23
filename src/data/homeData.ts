@@ -82,7 +82,7 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 6,
     title: "Bank-Grade Security",
     description: "Your assets are protected by advanced technologies used by global financial institutions. Luma Pay employs end-to-end encryption to ensure your transactions are always secure.",
-    image: "/images/homev3/why-choose/6.webp",
+    image: "/images/homev3/why-choose/6.png",
     imageRight: false,
   },
   {
