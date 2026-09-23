@@ -18,32 +18,32 @@ export const HomePage: React.FC = () => {
       {/* 1. Hero Section with Video Background */}
       <Hero />
 
-      {/* 2. Key Stats Metrics Bar */}
-      <StatsBar />
-
-      {/* 3. Media Partners "As Seen In" Marquee */}
+      {/* 2. Media Partners "As Seen In" Marquee (social proof after the hook) */}
       <AsSeenIn />
 
-      {/* 4. How It Works, Debit Cards, and Presale */}
-      <HowItWorks />
+      {/* 3. Key Stats Metrics Bar (metrics reinforce credibility) */}
+      <StatsBar />
 
-      {/* 5. What is Luma Pay & Core Features */}
+      {/* 4. What is Luma Pay & Core Features */}
       <WhatIsDigiTap />
 
-      {/* 6. Comparison: Traditional Bank vs Crypto Exchange vs Luma Pay */}
-      <ComparisonSection />
+      {/* 5. Complete Crypto Fiat Bank Features 6-Card Grid */}
+      <FeaturesGrid />
 
-      {/* 7. Supported Corridors */}
-      <SupportedCorridors />
+      {/* 6. How It Works, Debit Cards, and Presale */}
+      <HowItWorks />
 
-      {/* 8. Why Choose Luma Pay 10 Features */}
+      {/* 7. Why Choose Luma Pay 10 Features */}
       <WhyChooseUs />
 
-      {/* 9. Luma Pay App Interface Showcase */}
+      {/* 8. Luma Pay App Interface Showcase */}
       <InterfaceShowcase />
 
-      {/* 10. Complete Crypto Fiat Bank Features 6-Card Grid */}
-      <FeaturesGrid />
+      {/* 9. Supported Corridors */}
+      <SupportedCorridors />
+
+      {/* 10. Comparison: Traditional Bank vs Crypto Exchange vs Luma Pay */}
+      <ComparisonSection />
 
       {/* 11. Presale Limited Time Opportunity */}
       <PresaleBanner />
