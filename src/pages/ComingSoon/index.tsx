@@ -1,7 +1,5 @@
 import React from "react";
-import Countdown from "./Countdown";
-import WaitlistForm from "./WaitlistForm";
-import LumaCardTeaser from "./LumaCardTeaser";
+
 
 export const ComingSoonPage: React.FC = () => {
   return (
@@ -42,13 +40,7 @@ export const ComingSoonPage: React.FC = () => {
 
         {/* Status Pill */}
         <div className="flex items-center gap-3">
-          <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#112240]/80 border border-white/10 backdrop-blur-md text-xs font-medium text-slate-300">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00b4d8] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00b4d8]" />
-            </span>
-            <span>Private Beta In Progress</span>
-          </div>
+
 
           {/* Social icons */}
           <div className="flex items-center gap-2">
@@ -81,12 +73,7 @@ export const ComingSoonPage: React.FC = () => {
       {/* Main Hero & Content Section */}
       <main className="relative z-10 flex-1 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-8 md:py-12 max-w-6xl mx-auto w-full text-center">
         {/* Announcement Tag */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#00b4d8]/15 via-white/5 to-[#0077b6]/15 border border-[#00b4d8]/30 backdrop-blur-xl mb-6 shadow-sm">
-          <span className="text-sm">✨</span>
-          <span className="text-xs sm:text-sm font-semibold tracking-wide bg-gradient-to-r from-white via-cyan-100 to-[#90e0ef] bg-clip-text text-transparent">
-            THE EVOLUTION OF BORDERLESS FINANCE
-          </span>
-        </div>
+
 
         {/* Hero Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white font-dmsans max-w-4xl mx-auto leading-[1.1] mb-6">
@@ -102,94 +89,14 @@ export const ComingSoonPage: React.FC = () => {
         </p>
 
         {/* Live Countdown Timer */}
-        <Countdown />
+        {/* <Countdown /> */}
 
         {/* Early Access / Waitlist Form */}
-        <div className="w-full mt-2 mb-12">
+        {/* <div className="w-full mt-2 mb-12">
           <WaitlistForm />
-        </div>
+        </div> */}
 
-        {/* Interactive 3D Card Showcase & Sneak Peek */}
-        <div className="w-full mt-4 pt-6 border-t border-white/10">
-          <div className="text-center mb-8">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#00b4d8] font-bold">
-              Exclusive Sneak Peek
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
-              One Unified Account. Infinite Possibilities.
-            </h2>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
-            {/* 3D Holographic Card */}
-            <div className="lg:col-span-5 flex justify-center">
-              <LumaCardTeaser />
-            </div>
-
-            {/* Feature Highlights Grid */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-              {/* Feature 1 */}
-              <div className="p-5 rounded-2xl bg-[#112240]/60 border border-white/10 hover:border-[#00b4d8]/40 backdrop-blur-md transition-all hover:bg-[#112240]/80 group">
-                <div className="w-10 h-10 rounded-xl bg-[#00b4d8]/15 border border-[#00b4d8]/30 flex items-center justify-center text-[#00b4d8] mb-3 group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                  </svg>
-                </div>
-                <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#90e0ef] transition-colors">
-                  Global Debit Cards
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Spend fiat and crypto seamlessly at over 80 million merchants worldwide with zero foreign transaction fees.
-                </p>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="p-5 rounded-2xl bg-[#112240]/60 border border-white/10 hover:border-[#00b4d8]/40 backdrop-blur-md transition-all hover:bg-[#112240]/80 group">
-                <div className="w-10 h-10 rounded-xl bg-[#00b4d8]/15 border border-[#00b4d8]/30 flex items-center justify-center text-[#00b4d8] mb-3 group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#90e0ef] transition-colors">
-                  Instant Conversions
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Sub-second swaps between Bitcoin, Ethereum, stablecoins, and major world currencies at institutional interbank rates.
-                </p>
-              </div>
-
-              {/* Feature 3 */}
-              <div className="p-5 rounded-2xl bg-[#112240]/60 border border-white/10 hover:border-[#00b4d8]/40 backdrop-blur-md transition-all hover:bg-[#112240]/80 group">
-                <div className="w-10 h-10 rounded-xl bg-[#00b4d8]/15 border border-[#00b4d8]/30 flex items-center justify-center text-[#00b4d8] mb-3 group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#90e0ef] transition-colors">
-                  Institutional Security
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Regulated custodian protection, Multi-Party Computation (MPC), and biometric hardware-grade wallet security.
-                </p>
-              </div>
-
-              {/* Feature 4 */}
-              <div className="p-5 rounded-2xl bg-[#112240]/60 border border-white/10 hover:border-[#00b4d8]/40 backdrop-blur-md transition-all hover:bg-[#112240]/80 group">
-                <div className="w-10 h-10 rounded-xl bg-[#00b4d8]/15 border border-[#00b4d8]/30 flex items-center justify-center text-[#00b4d8] mb-3 group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#90e0ef] transition-colors">
-                  Local IBANs &amp; Routing
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Dedicated local bank details in USD, EUR, and GBP for instant cross-border wire transfers and payroll.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
 
       {/* Footer */}
