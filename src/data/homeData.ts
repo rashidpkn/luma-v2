@@ -96,7 +96,7 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 8,
     title: "24/7 Priority Support",
     description: "Luma Pay’s dedicated support team is available 24/7 to assist with all your account needs. Whether you’re managing transfers or exploring new features, help is always a message away.",
-    image: "/images/homev3/why-choose/8.png",
+    image: "/images/homev3/why-choose/support-phone.png",
     imageRight: false,
   },
   {
