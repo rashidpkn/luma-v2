@@ -68,14 +68,14 @@ export const whyChooseItems: WhyChooseItem[] = [
     id: 4,
     title: "Virtual Currency Capabilities",
     description: "Beyond traditional fiat, Luma Pay offers virtual currency conversions as an additional capability, allowing you to bridge traditional banking with modern digital assets securely.",
-    image: "/images/homev3/why-choose/4.png",
+    image: "/images/homev3/why-choose/virtual-phone.png",
     imageRight: false,
   },
   {
     id: 5,
     title: "Cross-Border Payments",
     description: "Send and receive money worldwide with ease through international remittance networks. Luma Pay allows users to make borderless payments and transfers without restrictions or excessive fees.",
-    image: "/images/homev3/why-choose/5.png",
+    image: "/images/homev3/why-choose/crossborder-phone.png",
     imageRight: true,
   },
   {
