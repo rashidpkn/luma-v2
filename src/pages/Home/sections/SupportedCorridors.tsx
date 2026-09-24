@@ -12,39 +12,38 @@ const corridors = [
 
 export const SupportedCorridors: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-[#0a192f] px-4 py-16 md:px-6 md:py-24">
+    <section className="bg-mist px-4 py-16 md:px-6 md:py-24">
       <div className="mx-auto flex max-w-6xl flex-col items-center">
-        <h2 className="mb-5 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+        <h2 className="mb-5 text-center text-3xl font-semibold tracking-tight text-navy sm:text-4xl md:text-5xl">
           Serving Clients Across Our <br className="hidden md:inline" /> Supported Corridors
         </h2>
-
-        <p className="mb-12 max-w-3xl text-center text-base leading-relaxed text-[#c2c7c5] md:text-lg">
+        <p className="mb-10 max-w-3xl text-center text-base leading-relaxed text-muted md:text-lg">
           Luma Pay's planned corridors cover Canada, the United Kingdom, the European Union
           (Germany, the Netherlands and Ireland), the United States and Australia. Additional
           markets will be added only once they are formally assessed, approved and reflected in our
           compliance documentation.
         </p>
 
-        <div className="relative mb-10 w-full max-w-5xl rounded-3xl border border-white/10 bg-[#071422] p-4 md:p-8">
+        <div className="surface-card mb-8 w-full max-w-5xl p-4 md:p-8">
           <img
             src="/corridor-map.svg"
-            alt="Supported Corridors Map"
+            alt="Map of Luma Pay supported corridors"
             className="h-auto w-full"
           />
         </div>
 
-        <div className="w-full min-w-0 overflow-x-auto">
-          <div className="mx-auto flex w-max flex-nowrap items-center gap-3">
+        <div className="w-full min-w-0 overflow-x-auto" tabIndex={0} aria-label="Supported countries">
+          <ul className="mx-auto flex w-max flex-nowrap items-center gap-3">
             {corridors.map((country) => (
-              <div
+              <li
                 key={country}
-                className="flex shrink-0 items-center gap-3 rounded-2xl border border-white/10 bg-[#112240] px-5 py-4 text-white"
+                className="surface-card flex shrink-0 items-center gap-3 px-4 py-3 text-navy"
               >
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-main-blue shadow-[0_0_8px_#00b4d8]" />
-                <span className="whitespace-nowrap font-medium">{country}</span>
-              </div>
+                <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
+                <span className="whitespace-nowrap text-sm font-medium">{country}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

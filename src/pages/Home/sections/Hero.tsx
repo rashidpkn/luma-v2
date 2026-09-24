@@ -1,102 +1,91 @@
 import React from "react";
+import SiteLink from "../../../components/SiteLink";
 import { heroBadges } from "../../../data/homeData";
+
+const badgeAlt: Record<string, string> = {
+  visa: "Visa",
+  "apple-pay": "Apple Pay",
+  "google-pay": "Google Pay",
+  ethereum: "Ethereum",
+  solidproof: "SolidProof",
+  Coinsult: "Coinsult",
+  discord: "Discord",
+  telegram: "Telegram",
+};
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative font-primary max-w-full min-h-[90vh] md:min-h-screen bg-dark-navy flex items-center pt-28 md:pt-36 overflow-hidden">
-      {/* Background Video */}
+    <section id="hero" className="relative overflow-hidden bg-navy">
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center pointer-events-none"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       >
         <source src="/videos/Digitap_Ad.mp4" type="video/mp4" />
         <source src="https://ae7qnpbetnccjd54.public.blob.vercel-storage.com/Digitap_Ad.mp4" type="video/mp4" />
       </video>
+      <div className="absolute inset-0 bg-navy/80" />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/65 z-10 pointer-events-none" />
-
-      {/* Hero content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-6 lg:px-10 py-12 md:py-20 w-full">
+      <div className="relative mx-auto flex min-h-[78vh] max-w-6xl items-center px-4 py-16 md:min-h-[84vh] md:px-6 md:py-24 lg:px-8">
         <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-white">
-            Multi-Currency Accounts, <br />
+          <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Multi-Currency Accounts,
+            <br />
             Foreign Exchange
+            <br />
+            &amp; Cross-Border Payments.
           </h1>
-          <div className="text-4xl sm:text-5xl lg:text-[68px] font-extrabold leading-[1.05] tracking-tighter text-white mt-1">
-            & Cross-Border Payments.
-          </div>
-
-          <p className="text-lg md:text-2xl text-gray-200 font-semibold tracking-tighter pt-6 pb-6 max-w-2xl leading-snug">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#d5e2ee] md:text-lg">
             Luma Pay provides multi-currency accounts, foreign exchange, and remittance services for businesses and individuals, with virtual currency conversion available as an additional capability.
           </p>
-
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-2">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="#get-started"
-              className="darkbtn border border-main-blue bg-[#112240] px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-main-blue font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer transition-all"
-            >
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <SiteLink href="#get-started" className="btn btn-primary">
               Get Started
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="#services"
-              className="btn-glow-shadow leftglow border border-main-blue px-6 sm:px-9 py-3.5 text-base sm:text-lg text-center tracking-tighter text-white font-semibold bg-main-blue rounded-full cursor-pointer transition-all active:scale-95"
-            >
+            </SiteLink>
+            <SiteLink href="#services" className="btn btn-secondary-dark">
               Explore Services
-            </a>
+            </SiteLink>
           </div>
-
-          {/* Partner & Trust Badges */}
-          <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-8 pt-2">
+          <ul className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-3">
             {heroBadges.map((badge) => {
-              const imgElement = (
+              const image = (
                 <img
-                  key={badge.name}
-                  alt={badge.name}
+                  alt={badgeAlt[badge.name] ?? badge.name}
                   src={badge.src}
                   width={badge.width}
                   height={badge.height}
-                  className="object-contain max-h-8 md:max-h-10 w-auto hover:opacity-80 transition-opacity"
+                  className="h-7 w-auto max-h-8 object-contain md:h-8"
                 />
               );
-
-              if (badge.href) {
-                return (
-                  <a
-                    key={badge.name}
-                    href={badge.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center"
-                  >
-                    {imgElement}
-                  </a>
-                );
-              }
-              return imgElement;
+              return (
+                <li key={badge.name}>
+                  {badge.href ? (
+                    <a href={badge.href} target="_blank" rel="noreferrer" className="inline-flex items-center">
+                      {image}
+                    </a>
+                  ) : (
+                    image
+                  )}
+                </li>
+              );
             })}
-
-            {/* X Icon */}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://x.com/LumaPay_app"
-              className="text-white hover:text-main-blue transition-colors"
-              aria-label="X (Twitter)"
-            >
-              <svg stroke="currentColor" fill="currentColor" viewBox="0 0 16 16" className="h-5 w-5 md:h-6 md:w-6">
-                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-              </svg>
-            </a>
-          </div>
+            <li>
+              <a
+                href="https://x.com/LumaPay_app"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white hover:text-sky"
+                aria-label="X (Twitter)"
+              >
+                <svg viewBox="0 0 16 16" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

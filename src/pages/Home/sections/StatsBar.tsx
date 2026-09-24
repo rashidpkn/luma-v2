@@ -54,21 +54,23 @@ const stats = [
 
 export const StatsBar: React.FC = () => {
   return (
-    <section className="w-full px-4 py-14 md:px-6 md:py-20">
+    <section className="bg-mist px-4 py-14 md:px-6 md:py-20" aria-label="Luma Pay at a glance">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
-        {stats.map((stat) => (
+        {stats.map((stat, index) => (
           <article
             key={stat.label}
-            className="flex flex-col items-start gap-4 rounded-2xl border border-white/10 bg-[#112240]/70 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-0.5 hover:border-main-blue/40 sm:p-6"
+            className={`surface-card flex flex-col gap-4 p-5 sm:p-6 ${
+              index === stats.length - 1 ? "col-span-2 lg:col-span-1" : ""
+            }`}
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-main-blue/10 text-main-blue">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent-dark">
               {stat.icon}
             </div>
             <div>
-              <div className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{stat.value}</div>
-              <div className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-main-blue">
+              <p className="text-3xl font-semibold tracking-tight text-navy">{stat.value}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent-dark">
                 {stat.label}
-              </div>
+              </p>
             </div>
           </article>
         ))}

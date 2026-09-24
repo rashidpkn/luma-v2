@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import BrandLogo from "../components/BrandLogo";
+import SiteLink from "../components/SiteLink";
 import { navItems } from "../data/navigation";
+import { resolveHref } from "../lib/links";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -8,145 +11,147 @@ interface MobileNavProps {
 
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
-  const toggleAccordion = (idx: number) => {
-    setExpandedIndex(expandedIndex === idx ? null : idx);
-  };
+  useEffect(() => {
+    if (!isOpen) return;
+    closeRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previous;
+    };
+  }, [isOpen, onClose]);
 
   return (
     <div
-      className={`2xl:hidden fixed inset-0 z-50 transition-transform duration-500 ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      }`}
+      id="mobile-menu"
+      className={`fixed inset-0 z-[60] min-[1100px]:hidden ${isOpen ? "" : "pointer-events-none"}`}
+      hidden={!isOpen}
     >
+      <button
+        type="button"
+        aria-label="Close menu"
+        className="absolute inset-0 bg-navy/40"
+        onClick={onClose}
+      />
       <nav
-        className="relative px-6 pt-7 h-screen overflow-y-auto bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/main/hero/mobbg.png')" }}
+        aria-label="Mobile"
+        className="absolute inset-y-0 right-0 flex w-full max-w-md flex-col bg-white shadow-none"
       >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-dark-navy/95 -z-10" />
+        <div className="flex items-center justify-between border-b border-line px-5 py-3">
+          <a href="/" onClick={onClose} aria-label="Luma Pay home">
+            <BrandLogo size="sm" />
+          </a>
+          <button
+            ref={closeRef}
+            type="button"
+            onClick={onClose}
+            aria-label="Close menu"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-navy"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
 
-        <div className="relative flex w-full flex-col justify-between min-h-full pb-10">
-          {/* Header in mobile menu */}
-          <div className="flex items-center justify-between">
-            <a href="/" onClick={onClose} className="inline-block -ml-2">
-              <img
-                alt="Luma Pay Logo"
-                width="136"
-                height="32"
-                className="h-8 w-auto object-contain"
-                src="/images/luma-pay-wordmark.png"
-              />
-            </a>
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Close menu"
-              className="p-2 rounded-full text-white hover:text-main-blue cursor-pointer"
-            >
-              <svg
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 512 512"
-                className="h-6 w-6 text-white"
-              >
-                <path d="m289.94 256 95-95A24 24 0 0 0 351 127l-95 95-95-95a24 24 0 0 0-34 34l95 95-95 95a24 24 0 1 0 34 34l95-95 95 95a24 24 0 0 0 34-34z" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Links list */}
-          <div className="flex flex-col justify-center py-6 w-full">
-            <ul className="space-y-3 w-full">
-              {navItems.map((item, idx) => (
-                <li key={item.label} className="border-b border-white/10 pb-2">
-                  <div className="flex items-center justify-between w-full">
-                    <a
-                      href={item.href}
-                      target={item.external ? "_blank" : undefined}
-                      rel={item.external ? "noreferrer" : undefined}
-                      onClick={onClose}
-                      className="inline-block text-2xl font-dmsans tracking-tighter text-white hover:text-main-blue transition-colors"
-                    >
-                      {item.label}
-                    </a>
+        <div className="flex-1 overflow-y-auto px-5 py-4">
+          <ul className="space-y-1">
+            {navItems.map((item, idx) => {
+              const live = resolveHref(item.href);
+              const expanded = expandedIndex === idx;
+              return (
+                <li key={item.label} className="border-b border-line">
+                  <div className="flex items-center justify-between gap-3 py-1">
+                    {live ? (
+                      <a
+                        href={live}
+                        onClick={onClose}
+                        className="py-2 text-lg font-medium text-navy"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-2 py-2 text-lg font-medium text-navy">
+                        {item.label}
+                        {!item.megaMenu && (
+                          <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-dark">
+                            Soon
+                          </span>
+                        )}
+                      </span>
+                    )}
                     {item.megaMenu && (
                       <button
                         type="button"
-                        onClick={() => toggleAccordion(idx)}
-                        className="p-2 ml-3 text-white rounded-full cursor-pointer"
-                        aria-expanded={expandedIndex === idx}
+                        onClick={() => setExpandedIndex(expanded ? null : idx)}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full text-navy"
+                        aria-expanded={expanded}
+                        aria-label={`${expanded ? "Collapse" : "Expand"} ${item.label}`}
                       >
                         <svg
-                          stroke="currentColor"
+                          viewBox="0 0 20 20"
+                          aria-hidden="true"
+                          className={`h-4 w-4 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
                           fill="currentColor"
-                          strokeWidth="0"
-                          viewBox="0 0 512 512"
-                          className={`h-4 w-4 text-white transition-transform duration-300 ${
-                            expandedIndex === idx ? "rotate-180 text-main-blue" : "rotate-0"
-                          }`}
                         >
-                          <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z" />
+                          <path d="M5.2 7.4a.75.75 0 0 1 1.06 0L10 11.14l3.74-3.74a.75.75 0 1 1 1.06 1.06l-4.27 4.27a.75.75 0 0 1-1.06 0L5.2 8.46a.75.75 0 0 1 0-1.06Z" />
                         </svg>
                       </button>
                     )}
                   </div>
-
-                  {/* Submenu accordion */}
-                  {item.megaMenu && expandedIndex === idx && (
-                    <div className="pl-4 pt-2 space-y-2">
-                      {item.megaMenu.columns.flatMap((col) =>
-                        col.links.map((sublink) => (
-                          <div key={sublink.label}>
-                            <a
-                              href={sublink.href}
-                              target={sublink.external ? "_blank" : undefined}
-                              rel={sublink.external ? "noreferrer" : undefined}
-                              onClick={onClose}
-                              className="text-lg text-gray-300 hover:text-main-blue block py-1"
-                            >
-                              {sublink.label}
-                            </a>
-                            {sublink.sublinks?.map((deepLink) => (
-                              <a
-                                key={deepLink.label}
-                                href={deepLink.href}
+                  {item.megaMenu && expanded && (
+                    <div className="pb-4 pl-1">
+                      <p className="pb-3 text-sm font-semibold text-accent-dark">Coming soon</p>
+                      <ul className="space-y-3">
+                        {item.megaMenu.columns.flatMap((col) =>
+                          col.links.map((sublink) => (
+                            <li key={sublink.label}>
+                              <SiteLink
+                                href={sublink.href}
+                                external={sublink.external}
+                                soon
                                 onClick={onClose}
-                                className="text-sm text-gray-400 hover:text-main-blue block pl-4 py-0.5"
+                                className="text-base text-ink"
                               >
-                                {deepLink.label}
-                              </a>
-                            ))}
-                          </div>
-                        ))
-                      )}
+                                {sublink.label}
+                              </SiteLink>
+                              {sublink.sublinks && sublink.sublinks.length > 0 && (
+                                <ul className="mt-1.5 space-y-1 pl-3">
+                                  {sublink.sublinks.map((deepLink) => (
+                                    <li key={deepLink.label}>
+                                      <SiteLink href={deepLink.href} soon className="text-sm text-muted">
+                                        {deepLink.label}
+                                      </SiteLink>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          )),
+                        )}
+                      </ul>
                     </div>
                   )}
                 </li>
-              ))}
-            </ul>
-          </div>
+              );
+            })}
+          </ul>
+        </div>
 
-          {/* Action buttons */}
-          <div className="w-full pt-4 space-y-3">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="#get-started"
-              className="darkbtn flex justify-center items-center border border-main-blue bg-[#112240] w-full px-4 py-3.5 text-lg text-center tracking-tighter text-main-blue font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
-            >
-              Get Started
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="#services"
-              className="btn-glow-shadow leftglow border border-main-blue flex items-center justify-center w-full px-4 py-4 text-lg text-center tracking-tighter text-white font-semibold bg-main-blue rounded-full cursor-pointer"
-            >
-              Explore Services
-            </a>
-          </div>
+        <div className="space-y-3 border-t border-line px-5 py-5">
+          <SiteLink href="#get-started" onClick={onClose} className="btn btn-secondary w-full">
+            Get Started
+          </SiteLink>
+          <SiteLink href="#services" onClick={onClose} className="btn btn-primary w-full">
+            Explore Services
+          </SiteLink>
         </div>
       </nav>
     </div>
