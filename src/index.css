@@ -2,38 +2,35 @@
 
 @theme {
   --font-primary: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --color-navy: #0a192f;
-  --color-navy-deep: #071422;
-  --color-ink: #122033;
-  --color-muted: #516070;
-  --color-line: #e3ebf3;
-  --color-mist: #f4f7fb;
-  --color-accent: #1a86c8;
-  --color-accent-dark: #0f629c;
-  --color-accent-soft: #e8f4fb;
-  --color-sky: #8ecff2;
+  --color-navy: #0a2540;
+  --color-ink: #1a3348;
+  --color-muted: #4d6478;
+  --color-blue: #d7eefb;
+  --color-blue-soft: #f3f8fc;
+  --color-line: #d5e6f2;
+  --color-sky: #7eb6e0;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 8.5rem;
+  scroll-padding-top: 7.5rem;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #ffffff;
-  color: var(--color-ink);
+  background: #f3f8fc;
+  color: #1a3348;
   font-family: var(--font-primary);
 }
 
 ::selection {
-  background: #c5e6f8;
-  color: #0a192f;
+  background: #c5e4f7;
+  color: #0a2540;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #1a86c8;
+  outline: 2px solid #0a2540;
   outline-offset: 3px;
 }
 
@@ -42,12 +39,11 @@ button:focus-visible {
   left: 1rem;
   top: -4rem;
   z-index: 80;
-  border-radius: 9999px;
-  background: #ffffff;
-  color: #0a192f;
-  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: #0a2540;
+  color: #fff;
+  padding: 0.65rem 1rem;
   font-weight: 600;
-  box-shadow: 0 0 0 1px #e3ebf3;
 }
 
 .skip-link:focus {
@@ -66,117 +62,82 @@ button:focus-visible {
   border: 0;
 }
 
+@layer components {
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  padding: 0.8rem 1.35rem;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
   font-size: 0.95rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
-  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .btn-sm {
-  padding: 0.5rem 0.9rem;
+  padding: 0.55rem 0.95rem;
   font-size: 0.875rem;
 }
 
 .btn-primary {
-  background: #1a86c8;
-  border: 1px solid #1a86c8;
+  background: #0a2540;
+  border: 1px solid #0a2540;
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background: #146fa6;
-  border-color: #146fa6;
+  background: #14375c;
+  border-color: #14375c;
 }
 
-.btn-secondary {
+.btn-soft {
+  background: #d7eefb;
+  border: 1px solid #d7eefb;
+  color: #0a2540;
+}
+
+.btn-soft:hover {
+  background: #c5e4f6;
+  border-color: #c5e4f6;
+}
+
+.btn-light {
   background: #ffffff;
-  border: 1px solid #c9d7e6;
-  color: #0a192f;
+  border: 1px solid #ffffff;
+  color: #0a2540;
 }
 
-.btn-secondary:hover {
-  border-color: #1a86c8;
-  color: #0f629c;
+.btn-light:hover {
+  background: #d7eefb;
+  border-color: #d7eefb;
+}
 }
 
-.btn-secondary-dark {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  color: #ffffff;
+.display {
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  color: #0a2540;
 }
 
-.btn-secondary-dark:hover {
-  border-color: #8ecff2;
-  color: #8ecff2;
+.lede {
+  color: #4d6478;
+  line-height: 1.65;
 }
 
-.nav-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  border: 0;
-  border-radius: 9999px;
-  background: transparent;
-  padding: 0.45rem 0.65rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: #0a192f;
-  white-space: nowrap;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.nav-link:hover,
-.nav-link[aria-expanded="true"] {
-  background: #e8f4fb;
-  color: #0f629c;
-}
-
-.surface-card {
-  border: 1px solid #e3ebf3;
-  border-radius: 1.25rem;
-  background: #ffffff;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee var(--duration, 25s) linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
+.link-quiet {
+  color: #0a2540;
+  text-decoration: underline;
+  text-decoration-color: #7eb6e0;
+  text-underline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .animate-marquee {
-    animation: none;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 1.5rem;
   }
 }

@@ -26,7 +26,7 @@ export const SiteLink: React.FC<SiteLinkProps> = ({
       <span className={`inline-flex items-center gap-2 ${className}`}>
         <span>{children}</span>
         {soon && (
-          <span className="shrink-0 rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-dark">
+          <span className="shrink-0 rounded-full bg-[#d7eefb] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#0a2540]">
             Soon
           </span>
         )}

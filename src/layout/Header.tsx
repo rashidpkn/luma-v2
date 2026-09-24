@@ -9,50 +9,28 @@ interface HeaderProps {
   menuOpen: boolean;
 }
 
-function Chevron({ open }: { open: boolean }) {
-  return (
-    <svg
-      viewBox="0 0 20 20"
-      aria-hidden="true"
-      className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-      fill="currentColor"
-    >
-      <path d="M5.2 7.4a.75.75 0 0 1 1.06 0L10 11.14l3.74-3.74a.75.75 0 1 1 1.06 1.06l-4.27 4.27a.75.75 0 0 1-1.06 0L5.2 8.46a.75.75 0 0 1 0-1.06Z" />
-    </svg>
-  );
-}
-
 function MegaPanel({ item }: { item: NavDropdownItem }) {
   if (!item.megaMenu) return null;
-  const links = item.megaMenu.columns.flatMap((col) => col.links);
+  const links = item.megaMenu.columns.flatMap((column) => column.links);
 
   return (
-    <div className="border-t border-line bg-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-10 lg:grid-cols-2 lg:px-8">
-        <div className="max-w-md">
-          <p className="text-2xl font-semibold tracking-tight text-navy">
-            {item.megaMenu.title}
-          </p>
+    <div className="rounded-[1.5rem] border border-line bg-white p-6 shadow-[0_18px_50px_rgba(10,37,64,0.08)] md:p-8">
+      <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
+        <div className="rounded-2xl bg-blue-soft p-5">
+          <p className="text-xl font-semibold tracking-tight text-navy">{item.megaMenu.title}</p>
           {item.megaMenu.description && (
-            <p className="mt-3 text-base leading-relaxed text-muted">
-              {item.megaMenu.description}
-            </p>
+            <p className="mt-3 text-sm leading-relaxed text-muted">{item.megaMenu.description}</p>
           )}
-          <p className="mt-4 text-sm font-semibold text-accent-dark">Coming soon</p>
+          <p className="mt-4 text-sm font-semibold text-navy">Coming soon</p>
         </div>
-        <ul className="grid content-start gap-x-8 gap-y-5 sm:grid-cols-2">
+        <ul className="grid content-start gap-4 sm:grid-cols-2">
           {links.map((link) => (
             <li key={link.label}>
-              <SiteLink
-                href={link.href}
-                external={link.external}
-                soon
-                className="text-base font-medium text-navy"
-              >
+              <SiteLink href={link.href} external={link.external} soon className="text-sm font-semibold text-navy">
                 {link.label}
               </SiteLink>
               {link.sublinks && link.sublinks.length > 0 && (
-                <ul className="mt-2 space-y-1.5">
+                <ul className="mt-2 space-y-1">
                   {link.sublinks.map((sub) => (
                     <li key={sub.label}>
                       <SiteLink href={sub.href} soon className="text-sm text-muted">
@@ -83,121 +61,76 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu, menuOpen }) =>
   }, []);
 
   const handleLeave = useCallback(() => {
-    closeTimeout.current = setTimeout(() => {
-      setActiveMega(null);
-    }, 180);
+    closeTimeout.current = setTimeout(() => setActiveMega(null), 160);
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3 py-2.5">
-          <a href="/" className="inline-flex shrink-0 items-center" aria-label="Luma Pay home">
-            <BrandLogo size="sm" className="md:h-14" />
-          </a>
-
-          <div className="hidden items-center gap-2 min-[1100px]:flex">
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 rounded-full px-2.5 py-2 text-sm font-semibold text-navy"
-            >
-              <img alt="" width={22} height={22} className="h-[22px] w-[22px] rounded-full" src="/images/flags/en.svg" />
-              <span>EN</span>
-            </button>
-            <SiteLink href="#get-started" className="btn btn-secondary btn-sm">
-              Download App
-            </SiteLink>
-            <SiteLink href="#early-access" className="btn btn-primary btn-sm">
-              Get Started
-            </SiteLink>
-          </div>
-
-          <div className="flex items-center gap-1.5 min-[1100px]:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center gap-1.5 rounded-full px-2 py-2 text-sm font-semibold text-navy"
-            >
-              <img alt="" width={20} height={20} className="h-5 w-5 rounded-full" src="/images/flags/en.svg" />
-              EN
-            </button>
-            <SiteLink href="#early-access" className="btn btn-primary btn-sm">
-              <span className="sm:hidden">Start</span>
-              <span className="hidden sm:inline">Get Started</span>
-            </SiteLink>
-            <button
-              type="button"
-              onClick={onOpenMobileMenu}
-              aria-label="Open menu"
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-navy"
-            >
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
-              </svg>
-            </button>
-          </div>
+    <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <a href="/" className="inline-flex shrink-0" aria-label="Luma Pay home">
+          <BrandLogo size="sm" className="sm:h-14" />
+        </a>
+        <div className="flex items-center gap-2">
+          <button type="button" className="hidden items-center gap-2 rounded-full px-2 py-2 text-sm font-semibold text-navy sm:inline-flex">
+            <img alt="" width={18} height={18} className="h-[18px] w-[18px] rounded-full" src="/images/flags/en.svg" />
+            EN
+          </button>
+          <SiteLink href="#get-started" className="btn btn-soft btn-sm hidden sm:inline-flex">
+            Download App
+          </SiteLink>
+          <SiteLink href="#early-access" className="btn btn-primary btn-sm">
+            Get Started
+          </SiteLink>
+          <button
+            type="button"
+            onClick={onOpenMobileMenu}
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-blue px-3 text-sm font-semibold text-navy min-[1180px]:hidden"
+          >
+            Menu
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h10" />
+            </svg>
+          </button>
         </div>
-
-        <nav className="hidden border-t border-line min-[1100px]:block" aria-label="Primary">
-          <ul className="flex items-center justify-center">
-            {navItems.map((item, index) => {
-              const live = resolveHref(item.href);
-              const open = activeMega === index;
-              return (
-                <li
-                  key={item.label}
-                  onMouseEnter={() => (item.megaMenu ? handleEnter(index) : setActiveMega(null))}
-                  onMouseLeave={handleLeave}
-                >
-                  {item.megaMenu ? (
-                    live ? (
-                      <a
-                        href={live}
-                        className="nav-link"
-                        aria-expanded={open}
-                        onFocus={() => handleEnter(index)}
-                      >
-                        {item.label}
-                        <Chevron open={open} />
-                      </a>
-                    ) : (
-                      <button
-                        type="button"
-                        className="nav-link"
-                        aria-expanded={open}
-                        onFocus={() => handleEnter(index)}
-                      >
-                        {item.label}
-                        <Chevron open={open} />
-                      </button>
-                    )
-                  ) : (
-                    <SiteLink href={item.href} soon className="nav-link">
-                      {item.label}
-                    </SiteLink>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
       </div>
 
-      {navItems.map((item, index) =>
-        item.megaMenu ? (
-          <div
-            key={`mega-${item.label}`}
-            className={`absolute left-0 right-0 hidden min-[1100px]:block ${
-              activeMega === index ? "" : "pointer-events-none invisible"
-            }`}
-            onMouseEnter={() => handleEnter(index)}
-            onMouseLeave={handleLeave}
-          >
-            {activeMega === index && <MegaPanel item={item} />}
+      <nav className="relative hidden border-t border-line bg-blue-soft min-[1180px]:block" aria-label="Primary" onMouseLeave={handleLeave}>
+        <ul className="mx-auto flex max-w-6xl items-center justify-between gap-1 px-4">
+          {navItems.map((item, index) => {
+            const live = resolveHref(item.href);
+            const open = activeMega === index;
+            return (
+              <li key={item.label} onMouseEnter={() => (item.megaMenu ? handleEnter(index) : setActiveMega(null))}>
+                {item.megaMenu ? (
+                  live ? (
+                    <a href={live} className="inline-flex items-center px-2 py-3 text-[13px] font-semibold text-navy" aria-expanded={open} onFocus={() => handleEnter(index)}>
+                      {item.label}
+                    </a>
+                  ) : (
+                    <button type="button" className="inline-flex items-center px-2 py-3 text-[13px] font-semibold text-navy" aria-expanded={open} onFocus={() => handleEnter(index)}>
+                      {item.label}
+                    </button>
+                  )
+                ) : (
+                  <SiteLink href={item.href} soon className="px-2 py-3 text-[13px] font-semibold text-navy">
+                    {item.label}
+                  </SiteLink>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        {activeMega !== null && navItems[activeMega]?.megaMenu && (
+          <div className="absolute left-0 right-0 top-full z-50 px-4 pt-3" onMouseEnter={() => handleEnter(activeMega)}>
+            <div className="mx-auto max-w-6xl">
+              <MegaPanel item={navItems[activeMega]} />
+            </div>
           </div>
-        ) : null,
-      )}
+        )}
+      </nav>
     </header>
   );
 };

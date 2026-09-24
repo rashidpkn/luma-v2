@@ -9,15 +9,12 @@ export const Layout: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen flex-col bg-white font-primary text-ink">
+    <div className="flex min-h-screen flex-col bg-blue-soft font-primary text-ink">
       <a href="#content" className="skip-link">
         Skip to content
       </a>
       <MobileNav isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
-      <Header
-        menuOpen={mobileMenuOpen}
-        onOpenMobileMenu={() => setMobileMenuOpen(true)}
-      />
+      <Header menuOpen={mobileMenuOpen} onOpenMobileMenu={() => setMobileMenuOpen(true)} />
       <main id="content" className="flex-1 pb-28">
         <Outlet />
       </main>

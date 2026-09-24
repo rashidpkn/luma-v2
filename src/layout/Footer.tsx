@@ -60,7 +60,7 @@ const legal = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-navy-deep text-white" id="footer">
+    <footer className="bg-navy text-white" id="footer">
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 lg:px-8 lg:py-16">
         <div className="flex flex-col gap-6 border-b border-white/10 pb-8 sm:flex-row sm:items-center sm:justify-between">
           <a href="/" className="inline-flex w-fit rounded-2xl bg-white px-3 py-2" aria-label="Luma Pay home">
