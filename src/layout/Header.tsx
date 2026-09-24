@@ -14,7 +14,7 @@ function MegaPanel({ item }: { item: NavDropdownItem }) {
   const links = item.megaMenu.columns.flatMap((column) => column.links);
 
   return (
-    <div className="rounded-[1.5rem] border border-line bg-white p-6 shadow-[0_18px_50px_rgba(10,37,64,0.08)] md:p-8">
+    <div className="rounded-[1.5rem] border border-line bg-blue p-6 text-navy shadow-[0_18px_50px_rgba(10,37,64,0.18)] md:p-8">
       <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
         <div className="rounded-2xl bg-blue-soft p-5">
           <p className="text-xl font-semibold tracking-tight text-navy">{item.megaMenu.title}</p>
@@ -65,13 +65,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu, menuOpen }) =>
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-sky/40 bg-navy text-[#e8f4fc]">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <a href="/" className="inline-flex shrink-0" aria-label="Luma Pay home">
+        <a href="/" className="inline-flex shrink-0 rounded-2xl bg-blue px-2 py-1" aria-label="Luma Pay home">
           <BrandLogo size="sm" className="sm:h-14" />
         </a>
         <div className="flex items-center gap-2">
-          <button type="button" className="hidden items-center gap-2 rounded-full px-2 py-2 text-sm font-semibold text-navy sm:inline-flex">
+          <button type="button" className="hidden items-center gap-2 rounded-full px-2 py-2 text-sm font-semibold text-[#e8f4fc] sm:inline-flex">
             <img alt="" width={18} height={18} className="h-[18px] w-[18px] rounded-full" src="/images/flags/en.svg" />
             EN
           </button>
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu, menuOpen }) =>
         </div>
       </div>
 
-      <nav className="relative hidden border-t border-line bg-blue-soft min-[1180px]:block" aria-label="Primary" onMouseLeave={handleLeave}>
+      <nav className="relative hidden border-t border-line bg-blue text-navy min-[1180px]:block" aria-label="Primary" onMouseLeave={handleLeave}>
         <ul className="mx-auto flex max-w-6xl items-center justify-between gap-1 px-4">
           {navItems.map((item, index) => {
             const live = resolveHref(item.href);

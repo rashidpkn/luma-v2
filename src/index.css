@@ -3,12 +3,13 @@
 @theme {
   --font-primary: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --color-navy: #0a2540;
-  --color-ink: #1a3348;
-  --color-muted: #4d6478;
-  --color-blue: #d7eefb;
-  --color-blue-soft: #f3f8fc;
-  --color-line: #d5e6f2;
-  --color-sky: #7eb6e0;
+  --color-ink: #12324c;
+  --color-muted: #163552;
+  --color-blue: #c5e8f8;
+  --color-blue-soft: #8ecae6;
+  --color-line: #6eb6dc;
+  --color-sky: #4a9ec8;
+  --color-mist: #e8f4fc;
 }
 
 html {
@@ -18,8 +19,8 @@ html {
 
 body {
   overflow-x: hidden;
-  background: #f3f8fc;
-  color: #1a3348;
+  background: #0a2540;
+  color: #e8f4fc;
   font-family: var(--font-primary);
 }
 
@@ -30,7 +31,7 @@ body {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #0a2540;
+  outline: 2px solid #8ecae6;
   outline-offset: 3px;
 }
 
@@ -85,8 +86,8 @@ button:focus-visible {
 
 .btn-primary {
   background: #0a2540;
-  border: 1px solid #0a2540;
-  color: #ffffff;
+  border: 1px solid #7eb6e0;
+  color: #e8f4fc;
 }
 
 .btn-primary:hover {
@@ -95,25 +96,25 @@ button:focus-visible {
 }
 
 .btn-soft {
-  background: #d7eefb;
-  border: 1px solid #d7eefb;
+  background: #c5e8f8;
+  border: 1px solid #6eb6dc;
   color: #0a2540;
 }
 
 .btn-soft:hover {
-  background: #c5e4f6;
-  border-color: #c5e4f6;
+  background: #d7f1fb;
+  border-color: #4a9ec8;
 }
 
 .btn-light {
-  background: #ffffff;
-  border: 1px solid #ffffff;
+  background: #c5e8f8;
+  border: 1px solid #c5e8f8;
   color: #0a2540;
 }
 
 .btn-light:hover {
-  background: #d7eefb;
-  border-color: #d7eefb;
+  background: #d7f1fb;
+  border-color: #d7f1fb;
 }
 }
 
@@ -121,16 +122,16 @@ button:focus-visible {
   font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1.02;
-  color: #0a2540;
+  color: inherit;
 }
 
 .lede {
-  color: #4d6478;
+  color: inherit;
   line-height: 1.65;
 }
 
 .link-quiet {
-  color: #0a2540;
+  color: inherit;
   text-decoration: underline;
   text-decoration-color: #7eb6e0;
   text-underline-offset: 3px;

@@ -30,7 +30,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
   return (
     <div id="mobile-menu" className={`fixed inset-0 z-[70] min-[1180px]:hidden ${isOpen ? "" : "pointer-events-none"}`} hidden={!isOpen}>
-      <div className="flex h-full flex-col bg-blue-soft">
+      <div className="flex h-full flex-col bg-blue-soft text-navy">
         <div className="flex items-center justify-between px-4 py-3">
           <a href="/" onClick={onClose} aria-label="Luma Pay home">
             <BrandLogo size="sm" />
@@ -40,7 +40,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             type="button"
             onClick={onClose}
             aria-label="Close menu"
-            className="inline-flex h-11 items-center rounded-full bg-white px-4 text-sm font-semibold text-navy"
+            className="inline-flex h-11 items-center rounded-full bg-navy px-4 text-sm font-semibold text-[#e8f4fc]"
           >
             Close
           </button>
@@ -51,7 +51,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               const live = resolveHref(item.href);
               const expanded = expandedIndex === index;
               return (
-                <li key={item.label} className="border-b border-[#c5dff0]">
+                <li key={item.label} className="border-b border-line">
                   <div className="flex items-center justify-between gap-3">
                     {live ? (
                       <a href={live} onClick={onClose} className="py-4 text-2xl font-semibold tracking-tight text-navy">
@@ -61,7 +61,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                       <span className="inline-flex flex-wrap items-center gap-2 py-4 text-2xl font-semibold tracking-tight text-navy">
                         {item.label}
                         {!item.megaMenu && (
-                          <span className="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em]">
+                          <span className="rounded-full bg-navy px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#e8f4fc]">
                             Soon
                           </span>
                         )}
@@ -73,7 +73,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                         aria-expanded={expanded}
                         aria-label={`${expanded ? "Collapse" : "Expand"} ${item.label}`}
                         onClick={() => setExpandedIndex(expanded ? null : index)}
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-navy"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-navy text-[#e8f4fc]"
                       >
                         <svg viewBox="0 0 20 20" className={`h-4 w-4 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`} fill="currentColor" aria-hidden="true">
                           <path d="M5.2 7.4a.75.75 0 0 1 1.06 0L10 11.14l3.74-3.74a.75.75 0 1 1 1.06 1.06l-4.27 4.27a.75.75 0 0 1-1.06 0L5.2 8.46a.75.75 0 0 1 0-1.06Z" />

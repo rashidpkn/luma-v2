@@ -10,7 +10,7 @@ const steps = [
 
 export const HowItWorks: React.FC = () => {
   return (
-    <section id="how-it-works" className="bg-blue-soft px-4 py-16 md:px-6 md:py-24">
+    <section id="how-it-works" className="bg-blue-soft px-4 py-16 text-navy md:px-6 md:py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="display max-w-4xl text-4xl sm:text-5xl">
           Multi-Currency Accounts &amp; Foreign Exchange - Your world. One app.
@@ -29,9 +29,9 @@ export const HowItWorks: React.FC = () => {
           </div>
           <ol className="grid gap-3 sm:grid-cols-2">
             {steps.map((step, index) => (
-              <li key={step} className="rounded-2xl bg-white p-4 shadow-[0_8px_24px_rgba(10,37,64,0.04)]">
+              <li key={step} className="rounded-2xl bg-navy p-4 text-[#e8f4fc]">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue text-sm font-semibold text-navy">0{index + 1}</span>
-                <p className="mt-2 text-sm font-medium leading-relaxed text-navy">{step}</p>
+                <p className="mt-2 text-sm font-medium leading-relaxed">{step}</p>
               </li>
             ))}
           </ol>
@@ -45,7 +45,7 @@ export const HowItWorks: React.FC = () => {
           />
         </div>
 
-        <article className="mt-6 grid items-center gap-8 rounded-[1.75rem] bg-white p-5 shadow-[0_10px_30px_rgba(10,37,64,0.05)] md:p-10 lg:grid-cols-2">
+        <article className="mt-6 grid items-center gap-8 rounded-[1.75rem] bg-navy p-5 text-[#e8f4fc] md:p-10 lg:grid-cols-2">
           <div className="rounded-[1.25rem] bg-blue px-4 py-8">
             <img
               alt="Physical and virtual Luma Pay debit cards"
@@ -63,7 +63,7 @@ export const HowItWorks: React.FC = () => {
           </div>
         </article>
 
-        <div id="rewards" className="mt-6 grid items-center gap-8 rounded-[1.75rem] bg-blue p-5 md:p-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div id="rewards" className="mt-6 grid items-center gap-8 rounded-[1.75rem] bg-navy p-5 text-[#e8f4fc] md:p-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h3 className="display text-3xl md:text-4xl">Join the Luma Pay Rewards Program</h3>
             <p className="lede mt-4 text-base md:text-lg">

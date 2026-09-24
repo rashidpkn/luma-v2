@@ -15,7 +15,7 @@ const badgeAlt: Record<string, string> = {
 
 export const Hero: React.FC = () => {
   return (
-    <section id="hero" className="bg-blue-soft">
+    <section id="hero" className="bg-navy text-[#e8f4fc]">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-8 md:px-6 md:pt-14 lg:grid-cols-2 lg:gap-14 lg:pb-10 lg:pt-16">
         <div>
           <h1 className="display text-[2.65rem] sm:text-6xl lg:text-[4.4rem]">
@@ -40,8 +40,8 @@ export const Hero: React.FC = () => {
           </video>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl px-4 pb-12 md:px-6">
-        <ul className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-line pt-6">
+      <div className="bg-blue text-navy">
+        <ul className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-3 px-4 py-6 md:px-6">
           {heroBadges.map((badge) => {
             const image = (
               <img
@@ -52,8 +52,9 @@ export const Hero: React.FC = () => {
                 className="h-7 w-auto object-contain"
               />
             );
+            const needsDarkPlate = badge.name === "apple-pay" || badge.name === "solidproof";
             return (
-              <li key={badge.name}>
+              <li key={badge.name} className={needsDarkPlate ? "rounded-lg bg-navy px-2 py-1" : undefined}>
                 {badge.href ? (
                   <a href={badge.href} target="_blank" rel="noreferrer" className="inline-flex">
                     {image}

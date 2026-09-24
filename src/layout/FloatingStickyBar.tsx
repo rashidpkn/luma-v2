@@ -33,12 +33,12 @@ export const FloatingStickyBar: React.FC = () => {
 
   return (
     <div className="fixed inset-x-0 bottom-3 z-40 px-3 md:bottom-4 md:px-4">
-      <div className="mx-auto flex max-w-4xl flex-col gap-2 rounded-2xl border border-line bg-white px-3 py-2.5 text-navy shadow-[0_10px_30px_rgba(10,37,64,0.08)] sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-4xl flex-col gap-2 rounded-2xl border border-line bg-blue px-3 py-2.5 text-navy shadow-[0_10px_30px_rgba(10,37,64,0.22)] sm:flex-row sm:items-center sm:justify-between">
         <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm ${isCollapsed ? "hidden sm:flex" : "flex"}`}>
           <span className="text-muted">Limited offer</span>
           <span className="font-semibold">0% FX Fees</span>
           <span className="text-muted line-through">1.5% Fees</span>
-          <span className="rounded-full bg-blue px-2 py-0.5 text-[11px] font-semibold text-navy">100% Off</span>
+          <span className="rounded-full bg-navy px-2 py-0.5 text-[11px] font-semibold text-[#e8f4fc]">100% Off</span>
         </p>
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2" aria-label="Offer countdown">
@@ -55,7 +55,7 @@ export const FloatingStickyBar: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-soft text-navy sm:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-navy text-[#e8f4fc] sm:hidden"
             aria-label="Toggle sticky bar details"
             aria-expanded={!isCollapsed}
           >

@@ -3,8 +3,8 @@ import SiteLink from "../../../components/SiteLink";
 
 export const PresaleBanner: React.FC = () => {
   return (
-    <section id="early-access" className="bg-white px-4 pb-8 md:px-6">
-      <div className="mx-auto max-w-6xl rounded-[1.75rem] bg-blue px-5 py-12 md:px-14 md:py-16">
+    <section id="early-access" className="bg-navy px-4 pb-8 md:px-6">
+      <div className="mx-auto max-w-6xl rounded-[1.75rem] bg-blue px-5 py-12 text-navy md:px-14 md:py-16">
         <div className="max-w-3xl">
           <h2 className="display text-3xl sm:text-4xl md:text-5xl">
             Don’t Miss Luma Pay Early Access – Limited Time Opportunity

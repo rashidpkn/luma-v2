@@ -45,7 +45,7 @@ const features = [
 
 export const WhatIsDigiTap: React.FC = () => {
   return (
-    <section className="bg-white px-4 py-16 md:px-6 md:py-24">
+    <section className="bg-navy px-4 py-16 text-[#e8f4fc] md:px-6 md:py-24">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-12 lg:gap-16">
         <h2 className="display text-4xl sm:text-5xl lg:col-span-5">What is Luma Pay</h2>
         <div className="lede space-y-4 text-base md:text-lg lg:col-span-7">
@@ -59,8 +59,8 @@ export const WhatIsDigiTap: React.FC = () => {
       </div>
       <div className="mx-auto mt-12 grid max-w-6xl gap-4 md:mt-16 lg:grid-cols-3">
         {features.map((feature) => (
-          <article key={feature.title} className="flex flex-col rounded-[1.5rem] bg-blue-soft p-5 md:p-6">
-            <div className="mb-5 flex h-40 items-center justify-center rounded-2xl bg-white">
+          <article key={feature.title} className="flex flex-col rounded-[1.5rem] bg-blue p-5 text-navy md:p-6">
+            <div className="mb-5 flex h-40 items-center justify-center rounded-2xl bg-blue-soft">
               <img alt={feature.title} src={feature.image} className="max-h-32 w-auto max-w-full object-contain" />
             </div>
             <h3 className="text-xl font-semibold tracking-tight text-navy">{feature.title}</h3>

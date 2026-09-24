@@ -9,7 +9,7 @@ export const Layout: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen flex-col bg-blue-soft font-primary text-ink">
+    <div className="flex min-h-screen flex-col bg-navy font-primary text-[#e8f4fc]">
       <a href="#content" className="skip-link">
         Skip to content
       </a>

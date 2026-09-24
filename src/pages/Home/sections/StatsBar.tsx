@@ -10,8 +10,8 @@ const stats = [
 
 export const StatsBar: React.FC = () => {
   return (
-    <section className="bg-blue-soft px-4 pb-16 md:px-6" aria-label="Luma Pay at a glance">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-[1.5rem] bg-white shadow-[0_10px_30px_rgba(10,37,64,0.05)] sm:grid-cols-3 lg:grid-cols-5">
+    <section className="bg-navy px-4 pb-16 md:px-6" aria-label="Luma Pay at a glance">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-[1.5rem] bg-blue text-navy sm:grid-cols-3 lg:grid-cols-5">
         {stats.map((stat) => (
           <article key={stat.label} className="border-b border-line px-5 py-6 last:border-b-0 sm:[&:nth-child(3)]:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
             <p className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">{stat.value}</p>

@@ -62,8 +62,8 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-navy text-white" id="footer">
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6 lg:px-8 lg:py-16">
-        <div className="flex flex-col gap-6 border-b border-white/10 pb-8 sm:flex-row sm:items-center sm:justify-between">
-          <a href="/" className="inline-flex w-fit rounded-2xl bg-white px-3 py-2" aria-label="Luma Pay home">
+        <div className="flex flex-col gap-6 border-b border-sky/40 pb-8 sm:flex-row sm:items-center sm:justify-between">
+          <a href="/" className="inline-flex w-fit rounded-2xl bg-blue px-3 py-2" aria-label="Luma Pay home">
             <BrandLogo size="sm" />
           </a>
           <ul className="flex flex-wrap items-center gap-2">
@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={item.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white hover:border-sky hover:text-sky"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-sky/50 text-[#e8f4fc] hover:border-sky hover:text-sky"
                 >
                   {item.icon}
                 </a>
@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-white/10 px-5 py-5 text-xs leading-relaxed text-[#b7c3d0]">
+        <div className="rounded-2xl border border-sky/40 px-5 py-5 text-xs leading-relaxed text-[#b7c3d0]">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <p>Copyright © 2026. All Rights Reserved.</p>
             <ul className="flex flex-wrap gap-x-4 gap-y-2">

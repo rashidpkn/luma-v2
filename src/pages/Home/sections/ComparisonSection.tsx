@@ -9,14 +9,14 @@ const columns = [
 
 export const ComparisonSection: React.FC = () => {
   return (
-    <section id="compare" className="bg-white px-4 py-16 md:px-6 md:py-24">
+    <section id="compare" className="bg-navy px-4 py-16 text-[#e8f4fc] md:px-6 md:py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="display max-w-3xl text-4xl sm:text-5xl">
           Traditional Bank vs Crypto Exchange vs Luma Pay
         </h2>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {columns.map((column) => (
-            <article key={column.title} className={`rounded-[1.5rem] p-5 text-center md:p-6 ${column.highlight ? "bg-blue" : "bg-blue-soft"}`}>
+            <article key={column.title} className={`rounded-[1.5rem] p-5 text-center text-navy md:p-6 ${column.highlight ? "bg-blue" : "bg-blue-soft"}`}>
               <div className="flex h-48 items-center justify-center">
                 <img alt={column.title} src={column.src} className="max-h-full max-w-full object-contain" />
               </div>
