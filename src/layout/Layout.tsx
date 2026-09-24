@@ -9,25 +9,16 @@ export const Layout: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-transparent text-heading flex flex-col font-primary selection:bg-main-blue selection:text-white">
-      {/* Mobile drawer navigation */}
-      <MobileNav
-        isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-      />
-
-      {/* Main header navbar */}
-      <Header onOpenMobileMenu={() => setMobileMenuOpen(true)} />
-
-      {/* Main page content routed through outlet */}
-      <main className="flex-1">
+    <div className="flex min-h-screen flex-col bg-navy font-primary text-[#e8f4fc]">
+      <a href="#content" className="skip-link">
+        Skip to content
+      </a>
+      <MobileNav isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      <Header menuOpen={mobileMenuOpen} onOpenMobileMenu={() => setMobileMenuOpen(true)} />
+      <main id="content" className="flex-1 pb-28">
         <Outlet />
       </main>
-
-      {/* Floating sticky presale timer & buy bar */}
       <FloatingStickyBar />
-
-      {/* Footer */}
       <Footer />
     </div>
   );

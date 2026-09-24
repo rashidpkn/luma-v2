@@ -1,11 +1,54 @@
-import React, { useState, useRef, useCallback } from "react";
-import { navItems } from "../data/navigation";
+import React, { useCallback, useRef, useState } from "react";
+import BrandLogo from "../components/BrandLogo";
+import SiteLink from "../components/SiteLink";
+import { navItems, type NavDropdownItem } from "../data/navigation";
+import { resolveHref } from "../lib/links";
 
 interface HeaderProps {
   onOpenMobileMenu: () => void;
+  menuOpen: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
+function MegaPanel({ item }: { item: NavDropdownItem }) {
+  if (!item.megaMenu) return null;
+  const links = item.megaMenu.columns.flatMap((column) => column.links);
+
+  return (
+    <div className="rounded-[1.5rem] border border-line bg-blue p-6 text-navy shadow-[0_18px_50px_rgba(10,37,64,0.18)] md:p-8">
+      <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
+        <div className="rounded-2xl bg-blue-soft p-5">
+          <p className="text-xl font-semibold tracking-tight text-navy">{item.megaMenu.title}</p>
+          {item.megaMenu.description && (
+            <p className="mt-3 text-sm leading-relaxed text-muted">{item.megaMenu.description}</p>
+          )}
+          <p className="mt-4 text-sm font-semibold text-navy">Coming soon</p>
+        </div>
+        <ul className="grid content-start gap-4 sm:grid-cols-2">
+          {links.map((link) => (
+            <li key={link.label}>
+              <SiteLink href={link.href} external={link.external} soon className="text-sm font-semibold text-navy">
+                {link.label}
+              </SiteLink>
+              {link.sublinks && link.sublinks.length > 0 && (
+                <ul className="mt-2 space-y-1">
+                  {link.sublinks.map((sub) => (
+                    <li key={sub.label}>
+                      <SiteLink href={sub.href} soon className="text-sm text-muted">
+                        {sub.label}
+                      </SiteLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu, menuOpen }) => {
   const [activeMega, setActiveMega] = useState<number | null>(null);
   const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -18,217 +61,76 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileMenu }) => {
   }, []);
 
   const handleLeave = useCallback(() => {
-    closeTimeout.current = setTimeout(() => {
-      setActiveMega(null);
-    }, 200);
+    closeTimeout.current = setTimeout(() => setActiveMega(null), 160);
   }, []);
 
   return (
-    <header className={`absolute top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${activeMega !== null ? 'bg-[#0a192f]' : 'hover:bg-[#0a192f]'}`}>
-      <div className="py-4 md:py-6" id="hero">
-        <div className="w-full z-20">
-          <div className="w-full flex items-center justify-between px-4 md:px-6 lg:px-10">
-            {/* Brand Logo */}
-            <div className="w-auto relative z-20">
-              <a href="/" className="inline-block">
-                <img
-                  alt="Luma Pay logo"
-                  loading="eager"
-                  width="187"
-                  height="40"
-                  className="relative z-20 h-9 w-auto object-contain md:h-10"
-                  src="/images/luma-pay-wordmark.png"
-                />
-              </a>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="w-auto hidden 2xl:block">
-              <div className="w-full hidden xl:flex 2xl:gap-x-0.5 items-center">
-                {navItems.map((item, index) => (
-                  <div
-                    key={item.label}
-                    onMouseEnter={() => item.megaMenu ? handleEnter(index) : setActiveMega(null)}
-                    onMouseLeave={handleLeave}
-                  >
-                    <a
-                      href={item.href}
-                      target={item.external ? "_blank" : undefined}
-                      rel={item.external ? "noreferrer" : undefined}
-                      className={`text-white flex gap-x-1 relative py-2 z-20 rounded-[30px] px-3.5 items-center text-lg tracking-tighter transition-colors ${
-                        activeMega === index ? 'bg-[#112240] text-main-blue' : 'hover:bg-[#112240] hover:text-main-blue'
-                      }`}
-                    >
-                      {item.label}
-                      {item.megaMenu && (
-                        <svg
-                          stroke="currentColor"
-                          fill="currentColor"
-                          strokeWidth="0"
-                          viewBox="0 0 448 512"
-                          className={`text-xs transition-transform duration-300 ml-1 ${
-                            activeMega === index ? 'text-main-blue -rotate-180' : 'text-white'
-                          }`}
-                          height="1em"
-                          width="1em"
-                        >
-                          <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
-                        </svg>
-                      )}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </nav>
-
-            {/* Desktop Actions */}
-            <div className="w-auto hidden 2xl:block relative z-20">
-              <div className="flex items-center gap-x-3">
-                <button
-                  type="button"
-                  className="rounded-md py-2 px-3 text-base font-semibold text-white flex items-center gap-2 cursor-pointer hover:text-main-blue transition-colors"
-                >
-                  <img
-                    alt="EN"
-                    width="22"
-                    height="22"
-                    className="rounded-full"
-                    src="/images/flags/en.svg"
-                  />
-                  EN
-                </button>
-
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="#get-started"
-                  className="darkbtn flex items-center border border-main-blue bg-[#112240] px-6 py-3 text-base text-center tracking-tighter text-main-blue font-semibold rounded-full hover:bg-[#112240]/80 cursor-pointer"
-                >
-                  Download App
-                </a>
-
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="#early-access"
-                  className="btn-glow-shadow leftglow border border-main-blue px-7 py-3 text-lg text-center tracking-tighter text-white font-semibold bg-main-blue rounded-full cursor-pointer transition-transform active:scale-95"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-
-            {/* Mobile / Tablet Actions */}
-            <div className="flex items-center gap-x-2 2xl:hidden relative z-20">
-              <button
-                type="button"
-                className="py-2 px-2 text-sm font-semibold text-white flex items-center gap-1.5 cursor-pointer"
-              >
-                <img
-                  alt="EN"
-                  width="20"
-                  height="20"
-                  className="rounded-full"
-                  src="/images/flags/en.svg"
-                />
-                EN
-              </button>
-
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="#early-access"
-                className="btn-glow-shadow leftglow border border-main-blue px-4 py-1.5 text-sm tracking-tighter text-white font-semibold bg-main-blue rounded-full"
-              >
-                Start
-              </a>
-
-              <button
-                type="button"
-                onClick={onOpenMobileMenu}
-                aria-label="Open menu"
-                className="inline-block p-2 rounded-full text-white hover:text-main-blue cursor-pointer"
-              >
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth="0"
-                  viewBox="0 0 15 15"
-                  className="h-7 w-7 text-white"
-                  height="1em"
-                  width="1em"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M1.5 3C1.22386 3 1 3.22386 1 3.5C1 3.77614 1.22386 4 1.5 4H13.5C13.7761 4 14 3.77614 14 3.5C14 3.22386 13.7761 3 13.5 3H1.5ZM1 7.5C1 7.22386 1.22386 7 1.5 7H13.5C13.7761 7 14 7.22386 14 7.5C14 7.77614 13.7761 8 13.5 8H1.5C1.22386 8 1 7.77614 1 7.5ZM1 11.5C1 11.2239 1.22386 11 1.5 11H13.5C13.7761 11 14 11.2239 14 11.5C14 11.7761 13.7761 12 13.5 12H1.5C1.22386 12 1 11.7761 1 11.5Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
+    <header className="sticky top-0 z-50 border-b border-sky/40 bg-navy text-[#e8f4fc]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <a href="/" className="inline-flex shrink-0 rounded-2xl bg-blue px-2 py-1" aria-label="Luma Pay home">
+          <BrandLogo size="sm" className="sm:h-14" />
+        </a>
+        <div className="flex items-center gap-2">
+          <button type="button" className="hidden items-center gap-2 rounded-full px-2 py-2 text-sm font-semibold text-[#e8f4fc] sm:inline-flex">
+            <img alt="" width={18} height={18} className="h-[18px] w-[18px] rounded-full" src="/images/flags/en.svg" />
+            EN
+          </button>
+          <SiteLink href="#get-started" className="btn btn-soft btn-sm hidden sm:inline-flex">
+            Download App
+          </SiteLink>
+          <SiteLink href="#early-access" className="btn btn-primary btn-sm">
+            Get Started
+          </SiteLink>
+          <button
+            type="button"
+            onClick={onOpenMobileMenu}
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-blue px-3 text-sm font-semibold text-navy min-[1180px]:hidden"
+          >
+            Menu
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h10" />
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Mega Menu Dropdowns — rendered outside the nav items so hovering the panel keeps it open */}
-      {navItems.map((item, index) =>
-        item.megaMenu ? (
-          <div
-            key={`mega-${item.label}`}
-            className={`absolute left-0 w-full z-40 transition-all duration-200 ${
-              activeMega === index
-                ? 'opacity-100 visible translate-y-0'
-                : 'opacity-0 invisible -translate-y-2 pointer-events-none'
-            }`}
-            style={{ top: '100%' }}
-            onMouseEnter={() => handleEnter(index)}
-            onMouseLeave={handleLeave}
-          >
-            <div className="bg-[#0a192f] shadow-2xl py-12">
-              <div className="max-w-[1400px] mx-auto px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 divide-x divide-main-blue">
-                  <div className="flex flex-col justify-start space-y-4 pr-8">
-                    <h3 className="text-3xl font-bold tracking-tighter text-white">
-                      {item.megaMenu.title}
-                    </h3>
-                    {item.megaMenu.description && (
-                      <p className="text-base text-gray-300 tracking-tighter max-w-md">
-                        {item.megaMenu.description}
-                      </p>
-                    )}
-                  </div>
-                  <div className="grid gap-y-4 grid-cols-2 pl-12">
-                    {item.megaMenu.columns.flatMap((col) =>
-                      col.links.map((link) => (
-                        <div key={link.label} className="flex flex-col gap-y-2">
-                          <a
-                            href={link.href}
-                            target={link.external ? "_blank" : undefined}
-                            rel={link.external ? "noreferrer" : undefined}
-                            className="text-lg font-medium tracking-tight text-white hover:bg-[#112240] py-2 px-4 -ml-4 w-fit hover:text-main-blue rounded-full transition-all duration-300"
-                          >
-                            {link.label}
-                          </a>
-                          {link.sublinks?.map((sub) => (
-                            <a
-                              key={sub.label}
-                              href={sub.href}
-                              className="text-base tracking-tight text-gray-400 hover:text-main-blue pl-4 py-1 transition-colors"
-                            >
-                              {sub.label}
-                            </a>
-                          ))}
-                        </div>
-                      ))
-                    )}
-                  </div>
-                </div>
-              </div>
+      <nav className="relative hidden border-t border-line bg-blue text-navy min-[1180px]:block" aria-label="Primary" onMouseLeave={handleLeave}>
+        <ul className="mx-auto flex max-w-6xl items-center justify-between gap-1 px-4">
+          {navItems.map((item, index) => {
+            const live = resolveHref(item.href);
+            const open = activeMega === index;
+            return (
+              <li key={item.label} onMouseEnter={() => (item.megaMenu ? handleEnter(index) : setActiveMega(null))}>
+                {item.megaMenu ? (
+                  live ? (
+                    <a href={live} className="inline-flex items-center px-2 py-3 text-[13px] font-semibold text-navy" aria-expanded={open} onFocus={() => handleEnter(index)}>
+                      {item.label}
+                    </a>
+                  ) : (
+                    <button type="button" className="inline-flex items-center px-2 py-3 text-[13px] font-semibold text-navy" aria-expanded={open} onFocus={() => handleEnter(index)}>
+                      {item.label}
+                    </button>
+                  )
+                ) : (
+                  <SiteLink href={item.href} soon className="px-2 py-3 text-[13px] font-semibold text-navy">
+                    {item.label}
+                  </SiteLink>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        {activeMega !== null && navItems[activeMega]?.megaMenu && (
+          <div className="absolute left-0 right-0 top-full z-50 px-4 pt-3" onMouseEnter={() => handleEnter(activeMega)}>
+            <div className="mx-auto max-w-6xl">
+              <MegaPanel item={navItems[activeMega]} />
             </div>
           </div>
-        ) : null
-      )}
+        )}
+      </nav>
     </header>
   );
 };

@@ -1,58 +1,37 @@
 import React from "react";
+import SiteLink from "../../../components/SiteLink";
 import { whyChooseItems } from "../../../data/homeData";
 
 export const WhyChooseUs: React.FC = () => {
   return (
-    <section className="font-primary px-4 py-16 md:px-6 md:py-24">
-      <div className="mx-auto flex max-w-6xl flex-col gap-5 md:gap-6">
+    <section className="bg-blue-soft px-4 py-16 text-navy md:px-6 md:py-24">
+      <div className="mx-auto max-w-6xl">
         {whyChooseItems.map((item, index) => (
-          <article
-            key={item.id}
-            className="grid items-center gap-8 rounded-3xl border border-white/10 bg-[#112240]/45 p-6 md:p-8 lg:grid-cols-2 lg:gap-12 lg:p-10"
-          >
-            <div className={item.imageRight ? "lg:order-1" : "lg:order-2"}>
-              <span className="text-sm font-semibold tracking-[0.18em] text-main-blue">
+          <article key={item.id} className="grid items-center gap-6 border-t border-line py-10 md:grid-cols-12 md:gap-10 md:py-12">
+            <p className="md:col-span-1">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue text-sm font-semibold text-navy">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <h2 className="pt-3 text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
-                {item.title}
-              </h2>
-              <p className="max-w-xl pt-4 text-base leading-relaxed text-[#c2c7c5] md:text-lg">
-                {item.description}
-              </p>
+            </p>
+            <div className="md:col-span-6">
+              <h2 className="display text-3xl md:text-4xl">{item.title}</h2>
+              <p className="lede mt-4 max-w-xl text-base md:text-lg">{item.description}</p>
             </div>
-            <div className={`flex justify-center ${item.imageRight ? "lg:order-2" : "lg:order-1"}`}>
-              <div className="flex w-full items-center justify-center rounded-2xl bg-[#0a192f] px-4 py-6">
-                <img
-                  alt={item.title}
-                  src={item.image}
-                  width={850}
-                  height={950}
-                  className="max-h-[280px] w-auto object-contain md:max-h-[340px]"
-                />
+            <div className="md:col-span-5">
+              <div className="flex justify-center rounded-[1.5rem] bg-blue px-4 py-6">
+                <img alt={item.title} src={item.image} width={850} height={950} className="max-h-[260px] w-auto max-w-full object-contain" />
               </div>
             </div>
           </article>
         ))}
-      </div>
-
-      <div className="mt-12 flex flex-wrap items-center justify-center gap-4 md:mt-16">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="#services"
-          className="btn-glow-shadow leftglow cursor-pointer rounded-full border border-main-blue bg-main-blue px-8 py-3.5 text-center text-base font-bold tracking-tight text-white transition-transform active:scale-95 sm:text-lg"
-        >
-          Explore Luma Pay Services
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="#get-started"
-          className="darkbtn cursor-pointer rounded-full border border-main-blue bg-[#112240] px-8 py-3.5 text-center text-base font-semibold tracking-tight text-main-blue transition-all hover:bg-[#112240]/80 sm:text-lg"
-        >
-          Get Started
-        </a>
+        <div className="flex flex-wrap gap-3 border-t border-line pt-10">
+          <SiteLink href="#services" className="btn btn-primary">
+            Explore Luma Pay Services
+          </SiteLink>
+          <SiteLink href="#get-started" className="btn btn-soft">
+            Get Started
+          </SiteLink>
+        </div>
       </div>
     </section>
   );
