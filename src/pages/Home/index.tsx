@@ -1,7 +1,5 @@
 import React from "react";
 import Hero from "./sections/Hero";
-import StatsBar from "./sections/StatsBar";
-import AsSeenIn from "./sections/AsSeenIn";
 import WhatIsDigiTap from "./sections/WhatIsDigiTap";
 import HowItWorks from "./sections/HowItWorks";
 import FeaturesGrid from "./sections/FeaturesGrid";
@@ -16,8 +14,6 @@ export const HomePage: React.FC = () => {
   return (
     <div className="flex w-full flex-col">
       <Hero />
-      <StatsBar />
-      <AsSeenIn />
       <WhatIsDigiTap />
       <HowItWorks />
       <FeaturesGrid />
